@@ -174,7 +174,7 @@ function bukaHadiah() {
 
         <!-- Musik utama website -->
         <audio id="birthdayMusic" loop>
-            <source src="/static/music/birds-of-a-feather.mp3" type="audio/mpeg">
+            <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
         </audio>
     `;
 
@@ -183,11 +183,10 @@ function bukaHadiah() {
     // Mulai lagu setelah Feyy menekan tombol masuk
     const music = document.getElementById("birthdayMusic");
 
-    music.volume = 0.5;
+music.volume = 0.5;
+music.currentTime = 0;
 
-    music.play().catch(error => {
-        console.log("Audio belum bisa diputar:", error);
-    });
+music.play();
 }
 
 
