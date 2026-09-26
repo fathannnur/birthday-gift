@@ -284,45 +284,45 @@ function bukaWindow(jenis) {
         <div class="file-area">
 
             <div class="file-placeholder"
-                onclick="bukaFoto('/static/pictures/foto 1.jpeg', 'Foto 1')">
-                <img src="/static/pictures/foto 1.jpeg" alt="Foto 1">
+                onclick="bukaFoto('static/pictures/foto 1.jpeg', 'Foto 1')">
+                <img src="static/pictures/foto 1.jpeg" alt="Foto 1">
                 <span>Foto 1</span>
             </div>
 
             <div class="file-placeholder"
-                onclick="bukaFoto('/static/pictures/foto 2.jpeg', 'Foto 2')">
-                <img src="/static/pictures/foto 2.jpeg" alt="Foto 2">
+                onclick="bukaFoto('static/pictures/foto 2.jpeg', 'Foto 2')">
+                <img src="static/pictures/foto 2.jpeg" alt="Foto 2">
                 <span>Foto 2</span>
             </div>
 
             <div class="file-placeholder"
-                onclick="bukaFoto('/static/pictures/foto 3.jpeg', 'Foto 3')">
-                <img src="/static/pictures/foto 3.jpeg" alt="Foto 3">
+                onclick="bukaFoto('static/pictures/foto 3.jpeg', 'Foto 3')">
+                <img src="static/pictures/foto 3.jpeg" alt="Foto 3">
                 <span>Foto 3</span>
             </div>
 
             <div class="file-placeholder"
-                onclick="bukaFoto('/static/pictures/foto 4.jpeg', 'Foto 4')">
-                <img src="/static/pictures/foto 4.jpeg" alt="Foto 4">
+                onclick="bukaFoto('static/pictures/foto 4.jpeg', 'Foto 4')">
+                <img src="static/pictures/foto 4.jpeg" alt="Foto 4">
                 <span>Foto 4</span>
             </div>
 
             <div class="file-placeholder"
-                onclick="bukaFoto('/static/pictures/foto 5.jpeg', 'Foto 5')">
-                <img src="/static/pictures/foto 5.jpeg" alt="Foto 5">
+                onclick="bukaFoto('static/pictures/foto 5.jpeg', 'Foto 5')">
+                <img src="static/pictures/foto 5.jpeg" alt="Foto 5">
                 <span>Foto 5</span>
             </div>
 
             <div class="file-placeholder"
-                onclick="bukaFoto('/static/pictures/foto 6.jpeg', 'Foto 6')">
-                <img src="/static/pictures/foto 6.jpeg" alt="Foto 6">
+                onclick="bukaFoto('static/pictures/foto 6.jpeg', 'Foto 6')">
+                <img src="static/pictures/foto 6.jpeg" alt="Foto 6">
                 <span>Foto 6</span>
             </div>
 
             <div class="file-placeholder special-picture"
-                onclick="bukaFoto('/static/pictures/foto.digicam.jpeg', 'Foto Digicam')">
+                onclick="bukaFoto('static/pictures/foto.digicam.jpeg', 'Foto Digicam')">
 
-                <img src="/static/pictures/foto.digicam.jpeg" alt="Foto Digicam">
+                <img src="static/pictures/foto.digicam.jpeg" alt="Foto Digicam">
 
                 <div class="picture-caption">
 
@@ -403,7 +403,7 @@ function bukaWindow(jenis) {
             </p>
 
             <audio controls>
-                <source src="/static/music/birds-of-a-feather.mp3" type="audio/mpeg">
+                <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
                 Browser kamu tidak mendukung audio.
             </audio>
 
