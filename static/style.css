@@ -227,7 +227,7 @@ button:active {
 
     grid-template-columns: 90px;
 
-    gap: 22px;
+    gap: 10px;
 
     z-index: 5;
 }
