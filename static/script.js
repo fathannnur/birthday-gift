@@ -194,10 +194,10 @@ function bukaWindow(jenis) {
 
     const area = document.getElementById("windows-area");
 
-    // Tutup semua window yang sedang terbuka
-    document.querySelectorAll(".xp-window").forEach(window => {
-        window.remove();
-    });
+    // Sembunyikan semua window yang sedang terbuka
+document.querySelectorAll(".xp-window").forEach(window => {
+    window.style.display = "none";
+});
 
     const windowId = "window-" + jenis;
 
@@ -342,61 +342,20 @@ function bukaWindow(jenis) {
 }
 
 
-    if (jenis === "videos") {
+    if (jenis === "music") {
 
-        judul = "My Videos";
-        icon = "🎬";
-
-        isi = `
-            <div class="folder-toolbar">
-                📁 My Videos
-            </div>
-
-            <div class="video-list">
-
-                <div class="video-placeholder">
-                    🎬
-                    <div>
-                        <strong>Video 1</strong>
-                        <small>Ucapan dari teman</small>
-                    </div>
-                </div>
-
-                <div class="video-placeholder">
-                    🎬
-                    <div>
-                        <strong>Video 2</strong>
-                        <small>Ucapan dari teman</small>
-                    </div>
-                </div>
-
-                <div class="video-placeholder">
-                    🎬
-                    <div>
-                        <strong>Video 3</strong>
-                        <small>Ucapan dari teman</small>
-                    </div>
-                </div>
-
-            </div>
-        `;
-    }
-
-
-if (jenis === "music") {
-
-    judul = "My Music";
+    judul = "Our Music";
     icon = "🎵";
 
     isi = `
         <div class="music-page">
 
             <div class="folder-toolbar">
-                📁 My Music
+                📁 Our Music
             </div>
 
             <div class="music-section-title">
-                💗 Songs I Picked For You
+                💗 Every Single Song Is About You
             </div>
 
 
@@ -453,7 +412,7 @@ if (jenis === "music") {
 
                     <audio controls>
                         <source
-                            src="static/music/Kau Rumahku - Raissa Anggiani - Copy.mp3"
+                            src="static/music/Raissa Anggiani Rai Kau Rumahku.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -480,19 +439,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            Last Kiss
-                        </strong>
+                        <strong>Last Kiss</strong>
 
-                        <span>
-                            Taylor Swift
-                        </span>
+                        <span>Taylor Swift</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/Last Kiss - Taylor Swift - Copy.mp3"
+                            src="static/music/Last Kiss.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -509,19 +464,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            Matilda
-                        </strong>
+                        <strong>Matilda</strong>
 
-                        <span>
-                            Harry Styles
-                        </span>
+                        <span>Harry Styles</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/Matilda - Harry Styles - Copy.mp3"
+                            src="static/music/Matilda.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -538,19 +489,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            You And I
-                        </strong>
+                        <strong>You And I</strong>
 
-                        <span>
-                            One Direction
-                        </span>
+                        <span>One Direction</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/You And I - One Direction - Copy.mp3"
+                            src="static/music/You I.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -567,19 +514,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            A Thousand Years
-                        </strong>
+                        <strong>A Thousand Years</strong>
 
-                        <span>
-                            Christina Perri
-                        </span>
+                        <span>Christina Perri</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/a thousand years - christina perri - Copy.mp3"
+                            src="static/music/Christina Perri A Thousand Years.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -596,19 +539,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            All Of Me
-                        </strong>
+                        <strong>All Of Me</strong>
 
-                        <span>
-                            John Legend
-                        </span>
+                        <span>John Legend</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/All Of Me - John Legend - Copy.mp3"
+                            src="static/music/John Legend All of Me Lyrics.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -625,19 +564,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            Yellow
-                        </strong>
+                        <strong>Yellow</strong>
 
-                        <span>
-                            Coldplay
-                        </span>
+                        <span>Coldplay</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/Yellow - Coldplay - Copy.mp3"
+                            src="static/music/Coldplay Yellow Official Video.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -654,19 +589,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            Sparks
-                        </strong>
+                        <strong>Sparks</strong>
 
-                        <span>
-                            Coldplay
-                        </span>
+                        <span>Coldplay</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/Sparks - Coldplay - Copy.mp3"
+                            src="static/music/coldplay sparks lyrics.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -687,15 +618,13 @@ if (jenis === "music") {
                             An Art Gallery Could Never Be As Unique As You
                         </strong>
 
-                        <span>
-                            mrld
-                        </span>
+                        <span>mrld</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/An Art Gallery Could Never Be As Unique As You - mrld - Copy.mp3"
+                            src="static/music/mrld An Art Gallery Could Never Be As Unique As You Official Audio.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -712,19 +641,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            Ocean Eyes
-                        </strong>
+                        <strong>Ocean Eyes</strong>
 
-                        <span>
-                            Billie Eilish
-                        </span>
+                        <span>Billie Eilish</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/ocean eyes - Billie Eilish - Copy.mp3"
+                            src="static/music/ocean eyes.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -741,19 +666,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            Anything You Want
-                        </strong>
+                        <strong>Anything You Want</strong>
 
-                        <span>
-                            Reality Club
-                        </span>
+                        <span>Reality Club</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/Anything You Want - Reality Club - Copy.mp3"
+                            src="static/music/Reality Club Anything You Want Official Lyric Video.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -770,19 +691,15 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>
-                            Enchanted
-                        </strong>
+                        <strong>Enchanted</strong>
 
-                        <span>
-                            Taylor Swift
-                        </span>
+                        <span>Taylor Swift</span>
 
                     </div>
 
                     <audio controls>
                         <source
-                            src="static/music/Enchanted - Taylor Swift - Copy.mp3"
+                            src="static/music/Taylor Swift Enchanted.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -793,8 +710,7 @@ if (jenis === "music") {
 
         </div>
     `;
-}
-
+    }
 
     if (jenis === "computer") {
 
@@ -965,10 +881,52 @@ function tutupFoto() {
 
 function tutupWindow(id) {
 
-    const windowElement = document.getElementById(id);
+    const windowElement =
+        document.getElementById(id);
 
-    if (windowElement) {
-        windowElement.remove();
+    if (!windowElement) {
+        return;
+    }
+
+
+    // Cek apakah window yang ditutup adalah My Music
+    const laguMyMusic =
+        windowElement.querySelectorAll(".music-page audio");
+
+
+    let adaLaguYangSedangMain = false;
+
+
+    laguMyMusic.forEach(lagu => {
+
+        if (!lagu.paused) {
+            adaLaguYangSedangMain = true;
+            lagu.pause();
+        }
+
+    });
+
+
+    // Hapus window
+    windowElement.remove();
+
+
+    // Kalau sebelumnya ada lagu My Music yang sedang dimainkan,
+    // hidupkan kembali Birds of a Feather
+    if (adaLaguYangSedangMain) {
+
+        const musikUtama =
+            document.getElementById("birthdayMusic");
+
+        if (musikUtama) {
+
+            musikUtama.play()
+                .catch(() => {});
+
+        }
+
+        musikUtamaHarusKembali = false;
+        laguMyMusicSedangDiputar = false;
     }
 }
 
@@ -1156,59 +1114,118 @@ function buatHati() {
 setInterval(buatHati, 800);
 
 let musikUtamaHarusKembali = false;
+let laguMyMusicSedangDiputar = false;
 
 
 document.addEventListener("play", function (event) {
 
+    if (event.target.tagName !== "AUDIO") {
+        return;
+    }
+
+
+    // =========================================
+    // MUSIK UTAMA
+    // =========================================
+
+    if (event.target.id === "birthdayMusic") {
+
+        // Kalau ada lagu My Music yang sedang dimainkan,
+        // jangan izinkan musik utama ikut bermain.
+        if (laguMyMusicSedangDiputar) {
+
+            event.target.pause();
+
+        }
+
+        return;
+    }
+
+
+    // =========================================
+    // LAGU DI MY MUSIC
+    // =========================================
+
     if (
-        event.target.tagName === "AUDIO" &&
-        event.target.id !== "birthdayMusic"
+        event.target.closest(".music-page")
     ) {
 
         const musikUtama =
             document.getElementById("birthdayMusic");
 
-        if (!musikUtama) {
-            return;
+
+        // Ingat apakah musik utama sedang bermain
+        if (musikUtama) {
+
+            musikUtamaHarusKembali =
+                !musikUtama.paused;
+
+            musikUtama.pause();
+
         }
 
-        // Simpan status musik utama sebelum dihentikan
-        musikUtamaHarusKembali = !musikUtama.paused;
 
-        // Hentikan musik utama
-        musikUtama.pause();
+        laguMyMusicSedangDiputar = true;
+
+
+        // Hentikan lagu My Music lainnya
+        document
+            .querySelectorAll(".music-page audio")
+            .forEach(lagu => {
+
+                if (lagu !== event.target) {
+                    lagu.pause();
+                }
+
+            });
+
     }
 
 }, true);
 
 
+
 document.addEventListener("pause", function (event) {
 
+    if (event.target.tagName !== "AUDIO") {
+        return;
+    }
+
+    if (event.target.id === "birthdayMusic") {
+        return;
+    }
+
     if (
-        event.target.tagName === "AUDIO" &&
-        event.target.id !== "birthdayMusic"
+        event.target.closest(".music-page")
     ) {
 
-        const musikUtama =
-            document.getElementById("birthdayMusic");
+        // Kalau audio masih ada di DOM,
+        // cek apakah ada lagu lain yang masih aktif.
+        const laguAktif =
+            Array.from(
+                document.querySelectorAll(".music-page audio")
+            ).some(lagu => !lagu.paused);
 
-        if (!musikUtama) {
-            return;
-        }
 
-        // Kalau musik utama sebelumnya memang sedang menyala
-        if (musikUtamaHarusKembali) {
+        if (!laguAktif) {
 
-            musikUtama.play()
-                .then(() => {
-                    musikUtamaHarusKembali = false;
-                })
-                .catch(error => {
-                    console.log(
-                        "Musik utama gagal diputar kembali:",
-                        error
-                    );
-                });
+            laguMyMusicSedangDiputar = false;
+
+
+            if (musikUtamaHarusKembali) {
+
+                const musikUtama =
+                    document.getElementById("birthdayMusic");
+
+                if (musikUtama) {
+
+                    musikUtama.play()
+                        .catch(() => {});
+
+                }
+
+                musikUtamaHarusKembali = false;
+            }
         }
     }
 
