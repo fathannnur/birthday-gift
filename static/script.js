@@ -402,9 +402,9 @@ function bukaWindow(jenis) {
             </p>
 
             <audio controls>
-                <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
-                Browser kamu tidak mendukung audio.
-            </audio>
+    <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio.
+</audio>
 
             <p class="music-note">
                 This one is for you. 🎀
@@ -570,6 +570,24 @@ function bukaFoto(src, nama) {
     `;
 
     document.body.appendChild(viewer);
+}
+
+function hentikanMusikLain(audioYangDiputar) {
+    const semuaAudio = document.querySelectorAll("audio");
+
+    semuaAudio.forEach(audio => {
+        if (audio !== audioYangDiputar) {
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    });
+}
+
+function matikanSemuaMusik() {
+    document.querySelectorAll("audio").forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+    });
 }
 
 
@@ -773,3 +791,19 @@ function buatHati() {
 
 
 setInterval(buatHati, 800);
+
+document.addEventListener("play", function (event) {
+
+    if (event.target.tagName === "AUDIO" &&
+        event.target.id !== "birthdayMusic") {
+
+        const musikUtama =
+            document.getElementById("birthdayMusic");
+
+        if (musikUtama) {
+            musikUtama.pause();
+            musikUtama.currentTime = 0;
+        }
+    }
+
+}, true);
