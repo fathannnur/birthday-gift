@@ -401,7 +401,7 @@ function bukaWindow(jenis) {
                 A song that reminds me of you. 💗
             </p>
 
-            <audio controls>
+            <audio id="myMusic" controls>
     <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
     Browser kamu tidak mendukung audio.
 </audio>
@@ -774,6 +774,9 @@ function buatHati() {
 
 setInterval(buatHati, 800);
 
+let musikUtamaHarusKembali = false;
+
+
 document.addEventListener("play", function (event) {
 
     if (
@@ -784,10 +787,15 @@ document.addEventListener("play", function (event) {
         const musikUtama =
             document.getElementById("birthdayMusic");
 
-        if (musikUtama) {
-            musikUtama.pause();
-            musikUtama.currentTime = 0;
+        if (!musikUtama) {
+            return;
         }
+
+        // Simpan status musik utama sebelum dihentikan
+        musikUtamaHarusKembali = !musikUtama.paused;
+
+        // Hentikan musik utama
+        musikUtama.pause();
     }
 
 }, true);
@@ -803,15 +811,23 @@ document.addEventListener("pause", function (event) {
         const musikUtama =
             document.getElementById("birthdayMusic");
 
-        if (musikUtama) {
+        if (!musikUtama) {
+            return;
+        }
 
-            setTimeout(() => {
+        // Kalau musik utama sebelumnya memang sedang menyala
+        if (musikUtamaHarusKembali) {
 
-                musikUtama.play().catch(error => {
-                    console.log("Musik utama belum bisa diputar:", error);
+            musikUtama.play()
+                .then(() => {
+                    musikUtamaHarusKembali = false;
+                })
+                .catch(error => {
+                    console.log(
+                        "Musik utama gagal diputar kembali:",
+                        error
+                    );
                 });
-
-            }, 100);
         }
     }
 
