@@ -345,12 +345,12 @@ function bukaWindow(jenis) {
 
     if (jenis === "videos") {
 
-        judul = "My Videos";
+        judul = "Our Videos";
         icon = "🎬";
 
         isi = `
             <div class="folder-toolbar">
-                📁 My Videos
+                📁 Our Videos
             </div>
 
             <div class="video-list">
@@ -386,7 +386,7 @@ function bukaWindow(jenis) {
 
     if (jenis === "music") {
 
-    judul = "My Music";
+    judul = "Our Music";
     icon = "🎵";
 
     isi = `
@@ -418,7 +418,7 @@ function bukaWindow(jenis) {
 
     if (jenis === "computer") {
 
-        judul = "My Computer";
+        judul = "Our Computer";
         icon = "💻";
 
         isi = `
@@ -436,7 +436,7 @@ function bukaWindow(jenis) {
 
                 <div class="drive">
                     📁
-                    <span>My Videos</span>
+                    <span>Our Videos</span>
                 </div>
 
                 <div class="drive">
@@ -446,7 +446,7 @@ function bukaWindow(jenis) {
 
                 <div class="drive">
                     🎵
-                    <span>My Music</span>
+                    <span>Our Music</span>
                 </div>
 
             </div>
