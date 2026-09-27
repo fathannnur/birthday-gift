@@ -572,24 +572,6 @@ function bukaFoto(src, nama) {
     document.body.appendChild(viewer);
 }
 
-function hentikanMusikLain(audioYangDiputar) {
-    const semuaAudio = document.querySelectorAll("audio");
-
-    semuaAudio.forEach(audio => {
-        if (audio !== audioYangDiputar) {
-            audio.pause();
-            audio.currentTime = 0;
-        }
-    });
-}
-
-function matikanSemuaMusik() {
-    document.querySelectorAll("audio").forEach(audio => {
-        audio.pause();
-        audio.currentTime = 0;
-    });
-}
-
 
 function tutupFoto() {
 
@@ -794,8 +776,10 @@ setInterval(buatHati, 800);
 
 document.addEventListener("play", function (event) {
 
-    if (event.target.tagName === "AUDIO" &&
-        event.target.id !== "birthdayMusic") {
+    if (
+        event.target.tagName === "AUDIO" &&
+        event.target.id !== "birthdayMusic"
+    ) {
 
         const musikUtama =
             document.getElementById("birthdayMusic");
@@ -808,18 +792,26 @@ document.addEventListener("play", function (event) {
 
 }, true);
 
+
 document.addEventListener("pause", function (event) {
 
-    if (event.target.tagName === "AUDIO" &&
-        event.target.id !== "birthdayMusic") {
+    if (
+        event.target.tagName === "AUDIO" &&
+        event.target.id !== "birthdayMusic"
+    ) {
 
         const musikUtama =
             document.getElementById("birthdayMusic");
 
         if (musikUtama) {
-            musikUtama.play().catch(error => {
-                console.log("Musik utama tidak bisa diputar:", error);
-            });
+
+            setTimeout(() => {
+
+                musikUtama.play().catch(error => {
+                    console.log("Musik utama belum bisa diputar:", error);
+                });
+
+            }, 100);
         }
     }
 
