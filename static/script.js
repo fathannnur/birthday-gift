@@ -807,3 +807,20 @@ document.addEventListener("play", function (event) {
     }
 
 }, true);
+
+document.addEventListener("pause", function (event) {
+
+    if (event.target.tagName === "AUDIO" &&
+        event.target.id !== "birthdayMusic") {
+
+        const musikUtama =
+            document.getElementById("birthdayMusic");
+
+        if (musikUtama) {
+            musikUtama.play().catch(error => {
+                console.log("Musik utama tidak bisa diputar:", error);
+            });
+        }
+    }
+
+}, true);
