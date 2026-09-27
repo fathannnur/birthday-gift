@@ -88,17 +88,17 @@ function bukaHadiah() {
 
                 <div class="desktop-icon" onclick="bukaWindow('pictures')">
                     <div class="icon-image">🖼️</div>
-                    <div class="icon-name">My Pictures</div>
+                    <div class="icon-name">Our Pictures</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('videos')">
                     <div class="icon-image">🎬</div>
-                    <div class="icon-name">My Videos</div>
+                    <div class="icon-name">Our Videos</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('music')">
                     <div class="icon-image">🎵</div>
-                    <div class="icon-name">My Music</div>
+                    <div class="icon-name">Our Music</div>
                 </div>
 
             </div>
@@ -125,7 +125,7 @@ function bukaHadiah() {
 
                     <div class="start-item" onclick="bukaWindow('pictures'); tutupStart()">
                         🖼️
-                        <span>My Pictures</span>
+                        <span>Our Pictures</span>
                     </div>
 
                     <div class="start-item" onclick="bukaWindow('videos'); tutupStart()">
