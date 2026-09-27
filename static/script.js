@@ -383,7 +383,7 @@ function bukaWindow(jenis) {
     }
 
 
-    if (jenis === "music") {
+if (jenis === "music") {
 
     judul = "My Music";
     icon = "🎵";
@@ -394,10 +394,6 @@ function bukaWindow(jenis) {
             <div class="folder-toolbar">
                 📁 My Music
             </div>
-
-            <!-- ========================= -->
-            <!-- FEATURED SONGS -->
-            <!-- ========================= -->
 
             <div class="music-section-title">
                 💗 Songs I Picked For You
@@ -457,7 +453,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/Kau Rumahku - Raissa Anggiani.mp3"
+                            src="static/music/Kau Rumahku - Raissa Anggiani - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -465,10 +461,6 @@ function bukaWindow(jenis) {
 
             </div>
 
-
-            <!-- ========================= -->
-            <!-- PLAYLIST -->
-            <!-- ========================= -->
 
             <div class="music-section-title playlist-title">
                 🎧 My Playlist
@@ -500,7 +492,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/Last Kiss - Taylor Swift.mp3"
+                            src="static/music/Last Kiss - Taylor Swift - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -529,7 +521,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/Matilda - Harry Styles.mp3"
+                            src="static/music/Matilda - Harry Styles - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -558,7 +550,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/You And I - One Direction.mp3"
+                            src="static/music/You And I - One Direction - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -587,7 +579,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/a thousand years - christina perri.mp3"
+                            src="static/music/a thousand years - christina perri - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -616,7 +608,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/All Of Me - John Legend.mp3"
+                            src="static/music/All Of Me - John Legend - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -645,7 +637,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/Yellow - Coldplay.mp3"
+                            src="static/music/Yellow - Coldplay - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -674,7 +666,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/Sparks - Coldplay.mp3"
+                            src="static/music/Sparks - Coldplay - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -703,7 +695,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/An Art Gallery Could Never Be As Unique As You - mrld.mp3"
+                            src="static/music/An Art Gallery Could Never Be As Unique As You - mrld - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -732,7 +724,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/ocean eyes - Billie Eilish.mp3"
+                            src="static/music/ocean eyes - Billie Eilish - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -761,7 +753,7 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/Anything You Want - Reality Club.mp3"
+                            src="static/music/Anything You Want - Reality Club - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
@@ -790,17 +782,20 @@ function bukaWindow(jenis) {
 
                     <audio controls>
                         <source
-                            src="static/music/Enchanted - Taylor Swift.mp3"
+                            src="static/music/Enchanted - Taylor Swift - Copy.mp3"
                             type="audio/mpeg">
                     </audio>
 
                 </div>
+
 
             </div>
 
         </div>
     `;
 }
+```
+
 
 
     if (jenis === "computer") {
