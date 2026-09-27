@@ -174,7 +174,7 @@ function bukaHadiah() {
 
         <!-- Musik utama website -->
         <audio id="birthdayMusic" loop>
-            <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
+            <source src="/static/music/birds-of-a-feather.mp3" type="audio/mpeg">
         </audio>
     `;
 
@@ -183,10 +183,11 @@ function bukaHadiah() {
     // Mulai lagu setelah Feyy menekan tombol masuk
     const music = document.getElementById("birthdayMusic");
 
-music.volume = 0.5;
-music.currentTime = 0;
+    music.volume = 0.5;
 
-music.play();
+    music.play().catch(error => {
+        console.log("Audio belum bisa diputar:", error);
+    });
 }
 
 
@@ -194,10 +195,10 @@ function bukaWindow(jenis) {
 
     const area = document.getElementById("windows-area");
 
-    // Sembunyikan semua window yang sedang terbuka
-document.querySelectorAll(".xp-window").forEach(window => {
-    window.style.display = "none";
-});
+    // Tutup semua window yang sedang terbuka
+    document.querySelectorAll(".xp-window").forEach(window => {
+        window.remove();
+    });
 
     const windowId = "window-" + jenis;
 
@@ -272,12 +273,12 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
     if (jenis === "pictures") {
 
-    judul = "My Pictures";
+    judul = "Our Pictures";
     icon = "🖼️";
 
     isi = `
         <div class="folder-toolbar">
-            📁 My Pictures
+            📁 Our Pictures
         </div>
 
         <div class="file-area">
@@ -342,375 +343,78 @@ document.querySelectorAll(".xp-window").forEach(window => {
 }
 
 
+    if (jenis === "videos") {
+
+        judul = "My Videos";
+        icon = "🎬";
+
+        isi = `
+            <div class="folder-toolbar">
+                📁 My Videos
+            </div>
+
+            <div class="video-list">
+
+                <div class="video-placeholder">
+                    🎬
+                    <div>
+                        <strong>Video 1</strong>
+                        <small>Ucapan dari teman</small>
+                    </div>
+                </div>
+
+                <div class="video-placeholder">
+                    🎬
+                    <div>
+                        <strong>Video 2</strong>
+                        <small>Ucapan dari teman</small>
+                    </div>
+                </div>
+
+                <div class="video-placeholder">
+                    🎬
+                    <div>
+                        <strong>Video 3</strong>
+                        <small>Ucapan dari teman</small>
+                    </div>
+                </div>
+
+            </div>
+        `;
+    }
+
+
     if (jenis === "music") {
 
-    judul = "Our Music";
+    judul = "My Music";
     icon = "🎵";
 
     isi = `
-        <div class="music-page">
+        <div class="music-player">
 
-            <div class="folder-toolbar">
-                📁 Our Music
+            <div class="music-cover">
+                🎵
             </div>
 
-            <div class="music-section-title">
-                💗 Every Single Song Is About You
-            </div>
-
-
-            <!-- BIRDS OF A FEATHER -->
-
-            <div class="featured-song">
-
-                <div class="music-cover">
-                    🎵
-                </div>
-
-                <div class="featured-info">
-
-                    <h2>Birds of a Feather</h2>
-
-                    <p class="artist">
-                        Billie Eilish
-                    </p>
-
-                    <p class="music-message">
-                        This song reminds me of you. 💗
-                    </p>
-
-                    <audio controls>
-                        <source
-                            src="static/music/birds-of-a-feather.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-            </div>
-
-
-            <!-- KAU RUMAHKU -->
-
-            <div class="featured-song">
-
-                <div class="music-cover">
-                    🏡
-                </div>
-
-                <div class="featured-info">
-
-                    <h2>Kau Rumahku</h2>
-
-                    <p class="artist">
-                        Raissa Anggiani
-                    </p>
-
-                    <p class="music-message">
-                        Somehow, you always feel like home 💗
-                    </p>
-
-                    <audio controls>
-                        <source
-                            src="static/music/Raissa Anggiani Rai Kau Rumahku.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-            </div>
-
-
-            <div class="music-section-title playlist-title">
-                🎧 My Playlist
-            </div>
-
-
-            <div class="playlist">
-
-
-                <!-- 1. LAST KISS -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        01
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>Last Kiss</strong>
-
-                        <span>Taylor Swift</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/Last Kiss.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 2. MATILDA -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        02
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>Matilda</strong>
-
-                        <span>Harry Styles</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/Matilda.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 3. YOU AND I -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        03
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>You And I</strong>
-
-                        <span>One Direction</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/You I.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 4. A THOUSAND YEARS -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        04
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>A Thousand Years</strong>
-
-                        <span>Christina Perri</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/Christina Perri A Thousand Years.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 5. ALL OF ME -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        05
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>All Of Me</strong>
-
-                        <span>John Legend</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/John Legend All of Me Lyrics.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 6. YELLOW -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        06
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>Yellow</strong>
-
-                        <span>Coldplay</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/Coldplay Yellow Official Video.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 7. SPARKS -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        07
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>Sparks</strong>
-
-                        <span>Coldplay</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/coldplay sparks lyrics.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 8. AN ART GALLERY -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        08
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>
-                            An Art Gallery Could Never Be As Unique As You
-                        </strong>
-
-                        <span>mrld</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/mrld An Art Gallery Could Never Be As Unique As You Official Audio.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 9. OCEAN EYES -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        09
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>Ocean Eyes</strong>
-
-                        <span>Billie Eilish</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/ocean eyes.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 10. ANYTHING YOU WANT -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        10
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>Anything You Want</strong>
-
-                        <span>Reality Club</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/Reality Club Anything You Want Official Lyric Video.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-                <!-- 11. ENCHANTED -->
-
-                <div class="playlist-song">
-
-                    <div class="playlist-number">
-                        11
-                    </div>
-
-                    <div class="playlist-info">
-
-                        <strong>Enchanted</strong>
-
-                        <span>Taylor Swift</span>
-
-                    </div>
-
-                    <audio controls>
-                        <source
-                            src="static/music/Taylor Swift Enchanted.mp3"
-                            type="audio/mpeg">
-                    </audio>
-
-                </div>
-
-
-            </div>
+            <h2>BIRDS OF A FEATHER</h2>
+
+            <p>
+                A song that reminds me of you. 💗
+            </p>
+
+            <audio controls>
+                <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
+                Browser kamu tidak mendukung audio.
+            </audio>
+
+            <p class="music-note">
+                This one is for you. 🎀
+            </p>
 
         </div>
     `;
-    }
+}
+
 
     if (jenis === "computer") {
 
@@ -727,7 +431,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
                 <div class="drive">
                     📁
-                    <span>My Pictures</span>
+                    <span>Our Pictures</span>
                 </div>
 
                 <div class="drive">
@@ -881,52 +585,10 @@ function tutupFoto() {
 
 function tutupWindow(id) {
 
-    const windowElement =
-        document.getElementById(id);
+    const windowElement = document.getElementById(id);
 
-    if (!windowElement) {
-        return;
-    }
-
-
-    // Cek apakah window yang ditutup adalah My Music
-    const laguMyMusic =
-        windowElement.querySelectorAll(".music-page audio");
-
-
-    let adaLaguYangSedangMain = false;
-
-
-    laguMyMusic.forEach(lagu => {
-
-        if (!lagu.paused) {
-            adaLaguYangSedangMain = true;
-            lagu.pause();
-        }
-
-    });
-
-
-    // Hapus window
-    windowElement.remove();
-
-
-    // Kalau sebelumnya ada lagu My Music yang sedang dimainkan,
-    // hidupkan kembali Birds of a Feather
-    if (adaLaguYangSedangMain) {
-
-        const musikUtama =
-            document.getElementById("birthdayMusic");
-
-        if (musikUtama) {
-
-            musikUtama.play()
-                .catch(() => {});
-
-        }
-
-        musikUtamaHarusKembali = false;
-        laguMyMusicSedangDiputar = false;
+    if (windowElement) {
+        windowElement.remove();
     }
 }
 
@@ -1112,121 +774,3 @@ function buatHati() {
 
 
 setInterval(buatHati, 800);
-
-let musikUtamaHarusKembali = false;
-let laguMyMusicSedangDiputar = false;
-
-
-document.addEventListener("play", function (event) {
-
-    if (event.target.tagName !== "AUDIO") {
-        return;
-    }
-
-
-    // =========================================
-    // MUSIK UTAMA
-    // =========================================
-
-    if (event.target.id === "birthdayMusic") {
-
-        // Kalau ada lagu My Music yang sedang dimainkan,
-        // jangan izinkan musik utama ikut bermain.
-        if (laguMyMusicSedangDiputar) {
-
-            event.target.pause();
-
-        }
-
-        return;
-    }
-
-
-    // =========================================
-    // LAGU DI MY MUSIC
-    // =========================================
-
-    if (
-        event.target.closest(".music-page")
-    ) {
-
-        const musikUtama =
-            document.getElementById("birthdayMusic");
-
-
-        // Ingat apakah musik utama sedang bermain
-        if (musikUtama) {
-
-            musikUtamaHarusKembali =
-                !musikUtama.paused;
-
-            musikUtama.pause();
-
-        }
-
-
-        laguMyMusicSedangDiputar = true;
-
-
-        // Hentikan lagu My Music lainnya
-        document
-            .querySelectorAll(".music-page audio")
-            .forEach(lagu => {
-
-                if (lagu !== event.target) {
-                    lagu.pause();
-                }
-
-            });
-
-    }
-
-}, true);
-
-
-
-document.addEventListener("pause", function (event) {
-
-    if (event.target.tagName !== "AUDIO") {
-        return;
-    }
-
-    if (event.target.id === "birthdayMusic") {
-        return;
-    }
-
-    if (
-        event.target.closest(".music-page")
-    ) {
-
-        // Kalau audio masih ada di DOM,
-        // cek apakah ada lagu lain yang masih aktif.
-        const laguAktif =
-            Array.from(
-                document.querySelectorAll(".music-page audio")
-            ).some(lagu => !lagu.paused);
-
-
-        if (!laguAktif) {
-
-            laguMyMusicSedangDiputar = false;
-
-
-            if (musikUtamaHarusKembali) {
-
-                const musikUtama =
-                    document.getElementById("birthdayMusic");
-
-                if (musikUtama) {
-
-                    musikUtama.play()
-                        .catch(() => {});
-
-                }
-
-                musikUtamaHarusKembali = false;
-            }
-        }
-    }
-
-}, true);
