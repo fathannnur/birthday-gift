@@ -794,8 +794,6 @@ if (jenis === "music") {
         </div>
     `;
 }
-```
-
 
 
     if (jenis === "computer") {
