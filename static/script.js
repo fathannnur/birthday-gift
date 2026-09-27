@@ -389,26 +389,414 @@ function bukaWindow(jenis) {
     icon = "🎵";
 
     isi = `
-        <div class="music-player">
+        <div class="music-page">
 
-            <div class="music-cover">
-                🎵
+            <div class="folder-toolbar">
+                📁 My Music
             </div>
 
-            <h2>BIRDS OF A FEATHER</h2>
+            <!-- ========================= -->
+            <!-- FEATURED SONGS -->
+            <!-- ========================= -->
 
-            <p>
-                A song that reminds me of you. 💗
-            </p>
+            <div class="music-section-title">
+                💗 Songs I Picked For You
+            </div>
 
-            <audio id="myMusic" controls>
-    <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
-    Browser kamu tidak mendukung audio.
-</audio>
 
-            <p class="music-note">
-                This one is for you. 🎀
-            </p>
+            <!-- BIRDS OF A FEATHER -->
+
+            <div class="featured-song">
+
+                <div class="music-cover">
+                    🎵
+                </div>
+
+                <div class="featured-info">
+
+                    <h2>Birds of a Feather</h2>
+
+                    <p class="artist">
+                        Billie Eilish
+                    </p>
+
+                    <p class="music-message">
+                        This song reminds me of you. 💗
+                    </p>
+
+                    <audio controls>
+                        <source
+                            src="static/music/birds-of-a-feather.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+            </div>
+
+
+            <!-- KAU RUMAHKU -->
+
+            <div class="featured-song">
+
+                <div class="music-cover">
+                    🏡
+                </div>
+
+                <div class="featured-info">
+
+                    <h2>Kau Rumahku</h2>
+
+                    <p class="artist">
+                        Raissa Anggiani
+                    </p>
+
+                    <p class="music-message">
+                        Somehow, you always feel like home 💗
+                    </p>
+
+                    <audio controls>
+                        <source
+                            src="static/music/Kau Rumahku - Raissa Anggiani.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+            </div>
+
+
+            <!-- ========================= -->
+            <!-- PLAYLIST -->
+            <!-- ========================= -->
+
+            <div class="music-section-title playlist-title">
+                🎧 My Playlist
+            </div>
+
+
+            <div class="playlist">
+
+
+                <!-- 1. LAST KISS -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        01
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            Last Kiss
+                        </strong>
+
+                        <span>
+                            Taylor Swift
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/Last Kiss - Taylor Swift.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 2. MATILDA -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        02
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            Matilda
+                        </strong>
+
+                        <span>
+                            Harry Styles
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/Matilda - Harry Styles.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 3. YOU AND I -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        03
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            You And I
+                        </strong>
+
+                        <span>
+                            One Direction
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/You And I - One Direction.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 4. A THOUSAND YEARS -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        04
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            A Thousand Years
+                        </strong>
+
+                        <span>
+                            Christina Perri
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/a thousand years - christina perri.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 5. ALL OF ME -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        05
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            All Of Me
+                        </strong>
+
+                        <span>
+                            John Legend
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/All Of Me - John Legend.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 6. YELLOW -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        06
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            Yellow
+                        </strong>
+
+                        <span>
+                            Coldplay
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/Yellow - Coldplay.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 7. SPARKS -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        07
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            Sparks
+                        </strong>
+
+                        <span>
+                            Coldplay
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/Sparks - Coldplay.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 8. AN ART GALLERY -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        08
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            An Art Gallery Could Never Be As Unique As You
+                        </strong>
+
+                        <span>
+                            mrld
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/An Art Gallery Could Never Be As Unique As You - mrld.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 9. OCEAN EYES -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        09
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            Ocean Eyes
+                        </strong>
+
+                        <span>
+                            Billie Eilish
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/ocean eyes - Billie Eilish.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 10. ANYTHING YOU WANT -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        10
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            Anything You Want
+                        </strong>
+
+                        <span>
+                            Reality Club
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/Anything You Want - Reality Club.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+
+                <!-- 11. ENCHANTED -->
+
+                <div class="playlist-song">
+
+                    <div class="playlist-number">
+                        11
+                    </div>
+
+                    <div class="playlist-info">
+
+                        <strong>
+                            Enchanted
+                        </strong>
+
+                        <span>
+                            Taylor Swift
+                        </span>
+
+                    </div>
+
+                    <audio controls>
+                        <source
+                            src="static/music/Enchanted - Taylor Swift.mp3"
+                            type="audio/mpeg">
+                    </audio>
+
+                </div>
+
+            </div>
 
         </div>
     `;
