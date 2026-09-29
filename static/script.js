@@ -346,7 +346,7 @@ function bukaWindow(jenis) {
                 aku gabisa sebut semua momen indah yang ku dapet selama sama fey,
                 tapi setiap tiba tiba keinget aku selalu senyum kok hehe cause it means a lot for me,
                 makasii udh nerima aku, ngajak aku ngobrol, sampe kita sedeket ini,
-                seneng banget ehh rasanya bisa dan pernah ngobrol berbagi waktu sama kamu feyy,
+                seneng banget ehh rasanya bisa ngobrol dan berbagi waktu sama kamu feyy,
                 anyway don't be a strangers yap😃
             </p>
 
