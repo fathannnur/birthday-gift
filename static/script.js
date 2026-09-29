@@ -1,20 +1,20 @@
-﻿function mulai() {
+function mulai() {
 
     document.querySelector(".container").classList.add("mulai-klik");
 
     setTimeout(() => {
 
         document.querySelector(".container").innerHTML = `
-            <div class="emoji">??</div>
+            <div class="emoji">🎂</div>
 
             <h1 id="typing"></h1>
 
             <p>
-                Aku ada hadiah kecil buat feyy??
+                Aku ada hadiah kecil buat feyy💞
             </p>
 
             <button onclick="bukaHadiah()">
-                Buka Hadiah ??
+                Buka Hadiah 🎁
             </button>
         `;
 
@@ -72,32 +72,32 @@ function bukaHadiah() {
             <div class="desktop-icons">
 
                 <div class="desktop-icon" onclick="bukaWindow('recycle')">
-                    <div class="icon-image">???</div>
+                    <div class="icon-image">🗑️</div>
                     <div class="icon-name">Recycle Bin</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('computer')">
-                    <div class="icon-image">??</div>
+                    <div class="icon-image">💻</div>
                     <div class="icon-name">Our Computer</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('word')">
-                    <div class="icon-image">??</div>
+                    <div class="icon-image">💻</div>
                     <div class="icon-name">Microsoft Word</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('pictures')">
-                    <div class="icon-image">???</div>
+                    <div class="icon-image">🗑️</div>
                     <div class="icon-name">Our Pictures</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('videos')">
-                    <div class="icon-image">??</div>
+                    <div class="icon-image">💻</div>
                     <div class="icon-name">Our Videos</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('music')">
-                    <div class="icon-image">??</div>
+                    <div class="icon-image">💻</div>
                     <div class="icon-name">Our Music</div>
                 </div>
 
@@ -108,33 +108,33 @@ function bukaHadiah() {
             <div class="start-menu" id="startMenu">
 
                 <div class="start-header">
-                    <div class="start-avatar">??</div>
+                    <div class="start-avatar">💗</div>
 
                     <div>
                         <div class="start-name">Birthday Girl</div>
-                        <div class="start-subtitle">?? special edition</div>
+                        <div class="start-subtitle">💗 special edition</div>
                     </div>
                 </div>
 
                 <div class="start-content">
 
                     <div class="start-item" onclick="bukaWindow('word'); tutupStart()">
-                        ??
+                        📄
                         <span>Birthday Letter</span>
                     </div>
 
                     <div class="start-item" onclick="bukaWindow('pictures'); tutupStart()">
-                        ???
+                        🖼️
                         <span>Our Pictures</span>
                     </div>
 
                     <div class="start-item" onclick="bukaWindow('videos'); tutupStart()">
-                        ??
+                        🎬
                         <span>Our Videos</span>
                     </div>
 
                     <div class="start-item" onclick="bukaWindow('music'); tutupStart()">
-                        ??
+                        🎵
                         <span>Our Music</span>
                     </div>
 
@@ -143,7 +143,7 @@ function bukaHadiah() {
                 <div class="start-footer">
 
                     <button onclick="tutupStart()">
-                        ?? Close
+                        💗 Close
                     </button>
 
                 </div>
@@ -153,18 +153,18 @@ function bukaHadiah() {
             <div class="taskbar">
 
                 <button class="start-button" onclick="toggleStart()">
-                    <span class="windows-logo">??</span>
+                    <span class="windows-logo">🪟</span>
                     <span>start</span>
                 </button>
 
                 <div class="taskbar-middle">
                     <div class="taskbar-task">
-                        ?? Birthday Gift
+                        💗 Birthday Gift
                     </div>
                 </div>
 
                 <div class="system-tray">
-                    <span>??</span>
+                    <span>🔊</span>
                     <span id="clock">00:00</span>
                 </div>
 
@@ -369,11 +369,11 @@ function bukaWindow(jenis) {
     if (jenis === "pictures") {
 
     judul = "Our Pictures";
-    icon = "???";
+    icon = "🖼️";
 
     isi = `
         <div class="folder-toolbar">
-            ?? Our Pictures
+            📁 Our Pictures
         </div>
 
         <div class="file-area">
@@ -422,11 +422,11 @@ function bukaWindow(jenis) {
                 <div class="picture-caption">
 
                     <div class="caption-title">
-                        My Favorite One??
+                        My Favorite One💗
                     </div>
 
                     <div class="caption-text">
-                        I Love Photography, Luckily My Favorite Person Become My Subject??
+                        I Love Photography, Luckily My Favorite Person Become My Subject💞
                     </div>
 
                 </div>
@@ -440,59 +440,59 @@ function bukaWindow(jenis) {
 
     if (jenis === "videos") {
 
-        judul = "Our Videos";
-        icon = "??";
+    judul = "Our Videos";
+    icon = "🎬";
 
-        isi = `
-            <div class="folder-toolbar">
-                ?? Our Videos
+    isi = `
+        <div class="folder-toolbar">
+            📁 Our Videos
+        </div>
+
+        <div class="video-list">
+
+            <div class="video-placeholder">
+                🎬
+                <div>
+                    <strong>Video 1</strong>
+                    <small>Ucapan dari teman</small>
+                </div>
             </div>
 
-            <div class="video-list">
-
-                <div class="video-placeholder">
-                    ??
-                    <div>
-                        <strong>Video 1</strong>
-                        <small>Ucapan dari teman</small>
-                    </div>
+            <div class="video-placeholder">
+                🎬
+                <div>
+                    <strong>Video 2</strong>
+                    <small>Ucapan dari teman</small>
                 </div>
-
-                <div class="video-placeholder">
-                    ??
-                    <div>
-                        <strong>Video 2</strong>
-                        <small>Ucapan dari teman</small>
-                    </div>
-                </div>
-
-                <div class="video-placeholder">
-                    ??
-                    <div>
-                        <strong>Video 3</strong>
-                        <small>Ucapan dari teman</small>
-                    </div>
-                </div>
-
             </div>
-        `;
-    }
+
+            <div class="video-placeholder">
+                🎬
+                <div>
+                    <strong>Video 3</strong>
+                    <small>Ucapan dari teman</small>
+                </div>
+            </div>
+
+        </div>
+    `;
+}
 
 
-    if (jenis === "music") {
+if (jenis === "music") {
 
     judul = "Our Music";
-    icon = "??";
+    icon = "🎵";
 
     isi = `
         <div class="music-page">
 
             <div class="folder-toolbar">
-                ?? Our Music
+                📁 Our Music
             </div>
 
             <div class="music-section-title">
-                ?? Every Single Song Is About You
+                💗 Every Single Song Is About You
             </div>
 
 
@@ -501,7 +501,7 @@ function bukaWindow(jenis) {
             <div class="featured-song">
 
                 <div class="music-cover">
-                    ??
+                    🎵
                 </div>
 
                 <div class="featured-info">
@@ -513,7 +513,7 @@ function bukaWindow(jenis) {
                     </p>
 
                     <p class="music-message">
-                        This song reminds me of you. ??
+                        This song reminds me of you. 💗
                     </p>
 
                     <audio controls>
@@ -532,7 +532,7 @@ function bukaWindow(jenis) {
             <div class="featured-song">
 
                 <div class="music-cover">
-                    ??
+                    🏡
                 </div>
 
                 <div class="featured-info">
@@ -544,7 +544,7 @@ function bukaWindow(jenis) {
                     </p>
 
                     <p class="music-message">
-                        Somehow, you always feel like home ??
+                        Somehow, you always feel like home 💗
                     </p>
 
                     <audio controls>
@@ -559,7 +559,7 @@ function bukaWindow(jenis) {
 
 
             <div class="music-section-title playlist-title">
-                ?? My Playlist
+                🎧 My Playlist
             </div>
 
 
@@ -852,33 +852,33 @@ function bukaWindow(jenis) {
     if (jenis === "computer") {
 
         judul = "Our Computer";
-        icon = "??";
+        icon = "🎬";
 
         isi = `
             <div class="computer-area">
 
                 <div class="drive">
-                    ??
+                    💾
                     <span>Birthday Memories</span>
                 </div>
 
                 <div class="drive">
-                    ??
+                    🖼️
                     <span>Our Pictures</span>
                 </div>
 
                 <div class="drive">
-                    ??
+                    🎬
                     <span>Our Videos</span>
                 </div>
 
                 <div class="drive">
-                    ??
+                    📄
                     <span>Birthday Letter</span>
                 </div>
 
                 <div class="drive">
-                    ??
+                    🎵
                     <span>Our Music</span>
                 </div>
 
@@ -890,19 +890,19 @@ function bukaWindow(jenis) {
     if (jenis === "recycle") {
 
         judul = "Recycle Bin";
-        icon = "???";
+        icon = "🖼️";
 
         isi = `
             <div class="recycle-area">
 
                 <div class="big-trash">
-                    ???
+                    🗑️
                 </div>
 
                 <h2>Recycle Bin</h2>
 
                 <p>
-                    Tidak ada yang perlu dibuang di sini ??
+                    Tidak ada yang perlu dibuang di sini 💗
                 </p>
 
                 <p>
@@ -1241,11 +1241,11 @@ function buatHati() {
     heart.classList.add("heart-fall");
 
     const jenisHati = [
-        "??",
-        "??",
-        "??",
-        "??",
-        "??"
+        "💗",
+        "💕",
+        "💖",
+        "💓",
+        "💘"
     ];
 
     heart.innerHTML =
