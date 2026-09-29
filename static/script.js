@@ -257,13 +257,17 @@ function bukaWindow(jenis) {
 
             <p>
                 semoga yang disemogakan tersemogakan hihi.<br>
-                sedih banget ehh cuman bisa ngucapin doang terus udah gitu dari jauh lagi,
+                sedih banget ehh cuman bisa ngucapin doang, udah gitu dari jauh lagi,
                 jadinya aku cuman bisa bantu doa aja yak..
             </p>
 
             <p>
                 doanya gabisa ku ketik di sini kayanya terlalu panjang,
                 cukup aku aja yang tau doanya gimana, jadi fey cukup aminin aja yaa.
+            </p>
+
+            <p>
+                tapi sedikit aku deskripsikan, singkatnya gini
             </p>
 
             <p>
@@ -356,7 +360,7 @@ function bukaWindow(jenis) {
 
             <p>
             btw boleh ga sih bilang<br>
-            i love you in every universe💛
+            I love you for a thousand years and more💛
             </p>
 
             <p>
