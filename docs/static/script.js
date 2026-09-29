@@ -1,20 +1,20 @@
-function mulai() {
+﻿function mulai() {
 
     document.querySelector(".container").classList.add("mulai-klik");
 
     setTimeout(() => {
 
         document.querySelector(".container").innerHTML = `
-            <div class="emoji">💌</div>
+            <div class="emoji">??</div>
 
             <h1 id="typing"></h1>
 
             <p>
-                Aku ada hadiah kecil buat feyy💞
+                Aku ada hadiah kecil buat feyy??
             </p>
 
             <button onclick="bukaHadiah()">
-                Buka Hadiah 🎁
+                Buka Hadiah ??
             </button>
         `;
 
@@ -72,32 +72,32 @@ function bukaHadiah() {
             <div class="desktop-icons">
 
                 <div class="desktop-icon" onclick="bukaWindow('recycle')">
-                    <div class="icon-image">🗑️</div>
+                    <div class="icon-image">???</div>
                     <div class="icon-name">Recycle Bin</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('computer')">
-                    <div class="icon-image">💻</div>
+                    <div class="icon-image">??</div>
                     <div class="icon-name">Our Computer</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('word')">
-                    <div class="icon-image">📄</div>
+                    <div class="icon-image">??</div>
                     <div class="icon-name">Microsoft Word</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('pictures')">
-                    <div class="icon-image">🖼️</div>
+                    <div class="icon-image">???</div>
                     <div class="icon-name">Our Pictures</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('videos')">
-                    <div class="icon-image">🎬</div>
+                    <div class="icon-image">??</div>
                     <div class="icon-name">Our Videos</div>
                 </div>
 
                 <div class="desktop-icon" onclick="bukaWindow('music')">
-                    <div class="icon-image">🎵</div>
+                    <div class="icon-image">??</div>
                     <div class="icon-name">Our Music</div>
                 </div>
 
@@ -108,33 +108,33 @@ function bukaHadiah() {
             <div class="start-menu" id="startMenu">
 
                 <div class="start-header">
-                    <div class="start-avatar">💗</div>
+                    <div class="start-avatar">??</div>
 
                     <div>
                         <div class="start-name">Birthday Girl</div>
-                        <div class="start-subtitle">💗 special edition</div>
+                        <div class="start-subtitle">?? special edition</div>
                     </div>
                 </div>
 
                 <div class="start-content">
 
                     <div class="start-item" onclick="bukaWindow('word'); tutupStart()">
-                        📄
+                        ??
                         <span>Birthday Letter</span>
                     </div>
 
                     <div class="start-item" onclick="bukaWindow('pictures'); tutupStart()">
-                        🖼️
+                        ???
                         <span>Our Pictures</span>
                     </div>
 
                     <div class="start-item" onclick="bukaWindow('videos'); tutupStart()">
-                        🎬
+                        ??
                         <span>Our Videos</span>
                     </div>
 
                     <div class="start-item" onclick="bukaWindow('music'); tutupStart()">
-                        🎵
+                        ??
                         <span>Our Music</span>
                     </div>
 
@@ -143,7 +143,7 @@ function bukaHadiah() {
                 <div class="start-footer">
 
                     <button onclick="tutupStart()">
-                        💗 Close
+                        ?? Close
                     </button>
 
                 </div>
@@ -153,18 +153,18 @@ function bukaHadiah() {
             <div class="taskbar">
 
                 <button class="start-button" onclick="toggleStart()">
-                    <span class="windows-logo">🪟</span>
+                    <span class="windows-logo">??</span>
                     <span>start</span>
                 </button>
 
                 <div class="taskbar-middle">
                     <div class="taskbar-task">
-                        💗 Birthday Gift
+                        ?? Birthday Gift
                     </div>
                 </div>
 
                 <div class="system-tray">
-                    <span>🔊</span>
+                    <span>??</span>
                     <span id="clock">00:00</span>
                 </div>
 
@@ -174,8 +174,7 @@ function bukaHadiah() {
 
         <!-- Musik utama website -->
         <audio id="birthdayMusic" loop>
-            <source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">
-        </audio>
+<source src="static/music/birds-of-a-feather.mp3" type="audio/mpeg">        </audio>
     `;
 
     mulaiJam();
@@ -183,10 +182,11 @@ function bukaHadiah() {
     // Mulai lagu setelah Feyy menekan tombol masuk
     const music = document.getElementById("birthdayMusic");
 
-music.volume = 0.5;
-music.currentTime = 0;
+    music.volume = 0.5;
 
-music.play();
+    music.play().catch(error => {
+        console.log("Audio belum bisa diputar:", error);
+    });
 }
 
 
@@ -194,28 +194,21 @@ function bukaWindow(jenis) {
 
     const area = document.getElementById("windows-area");
 
-    // Sembunyikan semua window yang sedang terbuka
-document.querySelectorAll(".xp-window").forEach(window => {
-    window.style.display = "none";
-});
-
     const windowId = "window-" + jenis;
 
+    // Kalau window sudah ada, jangan buat ulang.
+    // Cukup tampilkan kembali.
     const windowLama = document.getElementById(windowId);
 
     if (windowLama) {
 
         windowLama.style.display = "block";
-
         windowLama.style.zIndex = Date.now();
 
         return;
     }
 
-
     let judul = "";
-    let icon = "";
-    let isi = "";
 
 
     if (jenis === "word") {
@@ -249,35 +242,138 @@ document.querySelectorAll(".xp-window").forEach(window => {
             <h3>Selamat Ulang Tahun, Feyy! 🎂💗</h3>
 
             <p>
-                Isi surat panjang untuk Feyy nanti kita masukkan di sini.
+                Hii selamat ulang taun yaa feyy💛
             </p>
 
             <p>
-                Bagian ini akan menjadi surat utama yang bisa dibaca
-                ketika Microsoft Word dibuka.
+                semoga yang disemogakan tersemogakan hihi.
+                sedih banget ehh cuman bisa ngucapin doang terus udah gitu dari jauh lagi,
+                jadinya aku cuman bisa bantu doa aja yak..
             </p>
 
             <p>
-                Nanti kita isi dengan ucapan yang kamu sudah siapkan.
+                doanya gabisa ku ketik di sini kayanya terlalu panjang,
+                cukup aku aja yang tau doanya gimana, jadi fey cukup aminin aja yaa.
             </p>
 
             <p>
-                💗💗💗
+                semoga selalu bahagia hidupnya, sehat selalu, tetap ramah,
+                dikenal banyak orang sebagai perempuan yang baik hati, murah senyum.
+            </p>
+
+            <p>
+                semoga panjang umurnya dan hidupnya diisi dengan hal hal bermanfaat
+                buat diri sendiri atau orang lain.
+            </p>
+
+            <p>
+                semoga di ringankan bebannya, cobaannya dapat terlalui dengan mudah
+                dan mendapatkan pelajaran terbaik dari beban yang diberikan.
+            </p>
+
+            <p>
+                semoga selalu dilancarkan rezekinya.
+                semoga selalu dikelilingi oleh orang orang baik dan menjadi bagian
+                dari orang orang baik itu.
+                semoga makin banyak dapat kabar baik dalam hidupnya.
+            </p>
+
+            <p>
+                semoga cepat lulus kuliahnya, terus jadi bu dokter psi,
+                your future psi 🙏🏻
+            </p>
+
+            <p>
+                dan yang terpenting semoga bisa membuat orang yang fey cintai
+                dan orang yang mencintai fey jadi bangga atas semua hasil usaha,
+                kerja keras, dan jerit payah yang sudah fey lakukan apapun itu.
+            </p>
+
+            <p>
+                mungkin kayanya aku rasa ini momen yang tepat buat bilang
+            </p>
+
+            <p>
+                i remember the moment that when i first time noticed you in august 2024,
+                after that i've been waiting for you until now, i don't know why but i liked you,
+                yaa walaupun cuman 2 taun doang sih nungguinnya gak yang lama lama bgt wkwk.
+            </p>
+
+            <p>
+                aku seneng banget waktu pertama kali bisa satu meja sama fey terus
+                sempat beberapa kali berintraksi, ya walaupun abis itu kita gapernah
+                ngobrol lagi sampe hampir 1 tahun, terus akhirnya kita berinteraksi lagi bulan juni tadi.
+            </p>
+
+            <p>
+                aku inget fey bilang kalo waktu kita awal awal ngobrol,
+                aku selalu ngehindarin kontak mata, it's on purpose btw hahahah:D
+            </p>
+
+            <p>
+                im scared of your ocean eyes😄
+            </p>
+
+            <p>
+                btw kamu tau ga, aku suka banget sama suara kamu fey,
+                gtw lucu aja gitu makanya aku suka denger fey ngomong,
+                apalagi pas dibarengin dengan hal random yang fey lakuin
+            </p>
+
+            <p>
+                momen terbaik yang aku dapetin sama fey, itu waktu aku motret kamu pake digicam ku,
+                i mean i love photography and luckily my favorite person become my subject
+            </p>
+
+            <p>
+                "the person I love has become the subject of the hobby I love."
+            </p>
+
+            <p>
+                from the deepest heart
+            </p>
+
+            <p>
+                read it with your heart too haha&lt;3
+            </p>
+
+            <p>
+                thankss for every pretty good memories, lessons, maupun hal kecil lainnya,
+                aku gabisa sebut semua momen indah yang ku dapet selama sama fey,
+                tapi setiap tiba tiba keinget aku selalu senyum kok hehe cause it means a lot for me,
+                makasii udh nerima aku, ngajak aku ngobrol, sampe kita sedeket ini,
+                seneng banget ehh rasanya bisa dan pernah ngobrol berbagi waktu sama kamu feyy,
+                anyway don't be a strangers yap😃
+            </p>
+
+            <p>
+                take care & see you in januari 2027😉
+            </p>
+
+            <p>
+                btw boleh ga sih bilang
+            </p>
+
+            <p>
+                i love you in every universe💛
+            </p>
+
+            <p>
+                - fathan
             </p>
 
         </div>
     `;
 }
 
-
     if (jenis === "pictures") {
 
     judul = "Our Pictures";
-    icon = "🖼️";
+    icon = "???";
 
     isi = `
         <div class="folder-toolbar">
-            📁 Our Pictures
+            ?? Our Pictures
         </div>
 
         <div class="file-area">
@@ -326,11 +422,11 @@ document.querySelectorAll(".xp-window").forEach(window => {
                 <div class="picture-caption">
 
                     <div class="caption-title">
-                        My Favorite One💗
+                        My Favorite One??
                     </div>
 
                     <div class="caption-text">
-                        I Love Photography, Luckily My Favorite Person Become My Subject💞
+                        I Love Photography, Luckily My Favorite Person Become My Subject??
                     </div>
 
                 </div>
@@ -342,20 +438,61 @@ document.querySelectorAll(".xp-window").forEach(window => {
 }
 
 
+    if (jenis === "videos") {
+
+        judul = "Our Videos";
+        icon = "??";
+
+        isi = `
+            <div class="folder-toolbar">
+                ?? Our Videos
+            </div>
+
+            <div class="video-list">
+
+                <div class="video-placeholder">
+                    ??
+                    <div>
+                        <strong>Video 1</strong>
+                        <small>Ucapan dari teman</small>
+                    </div>
+                </div>
+
+                <div class="video-placeholder">
+                    ??
+                    <div>
+                        <strong>Video 2</strong>
+                        <small>Ucapan dari teman</small>
+                    </div>
+                </div>
+
+                <div class="video-placeholder">
+                    ??
+                    <div>
+                        <strong>Video 3</strong>
+                        <small>Ucapan dari teman</small>
+                    </div>
+                </div>
+
+            </div>
+        `;
+    }
+
+
     if (jenis === "music") {
 
     judul = "Our Music";
-    icon = "🎵";
+    icon = "??";
 
     isi = `
         <div class="music-page">
 
             <div class="folder-toolbar">
-                📁 Our Music
+                ?? Our Music
             </div>
 
             <div class="music-section-title">
-                💗 Every Single Song Is About You
+                ?? Every Single Song Is About You
             </div>
 
 
@@ -364,7 +501,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
             <div class="featured-song">
 
                 <div class="music-cover">
-                    🎵
+                    ??
                 </div>
 
                 <div class="featured-info">
@@ -376,7 +513,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
                     </p>
 
                     <p class="music-message">
-                        This song reminds me of you. 💗
+                        This song reminds me of you. ??
                     </p>
 
                     <audio controls>
@@ -395,7 +532,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
             <div class="featured-song">
 
                 <div class="music-cover">
-                    🏡
+                    ??
                 </div>
 
                 <div class="featured-info">
@@ -407,7 +544,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
                     </p>
 
                     <p class="music-message">
-                        Somehow, you always feel like home 💗
+                        Somehow, you always feel like home ??
                     </p>
 
                     <audio controls>
@@ -422,7 +559,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
 
             <div class="music-section-title playlist-title">
-                🎧 My Playlist
+                ?? My Playlist
             </div>
 
 
@@ -715,33 +852,33 @@ document.querySelectorAll(".xp-window").forEach(window => {
     if (jenis === "computer") {
 
         judul = "Our Computer";
-        icon = "💻";
+        icon = "??";
 
         isi = `
             <div class="computer-area">
 
                 <div class="drive">
-                    💾
+                    ??
                     <span>Birthday Memories</span>
                 </div>
 
                 <div class="drive">
-                    📁
+                    ??
                     <span>Our Pictures</span>
                 </div>
 
                 <div class="drive">
-                    📁
+                    ??
                     <span>Our Videos</span>
                 </div>
 
                 <div class="drive">
-                    📄
+                    ??
                     <span>Birthday Letter</span>
                 </div>
 
                 <div class="drive">
-                    🎵
+                    ??
                     <span>Our Music</span>
                 </div>
 
@@ -753,19 +890,19 @@ document.querySelectorAll(".xp-window").forEach(window => {
     if (jenis === "recycle") {
 
         judul = "Recycle Bin";
-        icon = "🗑️";
+        icon = "???";
 
         isi = `
             <div class="recycle-area">
 
                 <div class="big-trash">
-                    🗑️
+                    ???
                 </div>
 
                 <h2>Recycle Bin</h2>
 
                 <p>
-                    Tidak ada yang perlu dibuang di sini 💗
+                    Tidak ada yang perlu dibuang di sini ??
                 </p>
 
                 <p>
@@ -797,15 +934,15 @@ document.querySelectorAll(".xp-window").forEach(window => {
             <div class="window-buttons">
 
                 <button onclick="minimizeWindow('${windowId}')">
-                    −
+                    -
                 </button>
 
                 <button onclick="maximizeWindow('${windowId}')">
-                    □
+                    ?
                 </button>
 
                 <button onclick="tutupWindow('${windowId}')">
-                    ×
+                    �
                 </button>
 
             </div>
@@ -853,7 +990,7 @@ function bukaFoto(src, nama) {
                     ${nama}
 
                     <button onclick="tutupFoto()">
-                        ×
+                        �
                     </button>
                 </div>
 
@@ -889,47 +1026,73 @@ function tutupWindow(id) {
     }
 
 
-    // Cek apakah window yang ditutup adalah Our Music
-    const laguMyMusic =
-        windowElement.querySelectorAll(".music-page audio");
+    // =========================================
+    // CEK APAKAH INI OUR MUSIC
+    // =========================================
+
+    const iniOurMusic =
+        windowElement.querySelector(".music-page");
 
 
-    let adaLaguYangSedangMain = false;
+    if (iniOurMusic) {
+
+        const laguOurMusic =
+            windowElement.querySelectorAll(".music-page audio");
 
 
-    laguMyMusic.forEach(lagu => {
+        // Simpan status SEBELUM lagu dihentikan
+        const laguSedangDiputar =
+            Array.from(laguOurMusic)
+                .some(lagu => !lagu.paused);
 
-        if (!lagu.paused) {
-            adaLaguYangSedangMain = true;
+
+        // Matikan semua lagu Our Music
+        laguOurMusic.forEach(lagu => {
             lagu.pause();
+        });
+
+
+        // Hapus window
+        windowElement.remove();
+
+
+        // =========================================
+        // HANYA NYALAKAN MUSIK UTAMA
+        // JIKA LAGU OUR MUSIC MEMANG SEDANG MAIN
+        // SAAT TOMBOL X DITEKAN
+        // =========================================
+
+        if (laguSedangDiputar) {
+
+            const musikUtama =
+                document.getElementById("birthdayMusic");
+
+
+            if (musikUtama) {
+
+                musikUtama.play()
+                    .catch(() => {});
+
+            }
+
         }
 
-    });
 
+        ourMusicSedangTerbuka = false;
+        ourMusicPernahDiputar = false;
+        ourMusicSedangDiputar = false;
+        musikUtamaSedangDipauseOlehOurMusic = false;
 
-    // Hapus window
-    windowElement.remove();
-
-
-    // Kalau sebelumnya ada lagu Our Music yang sedang dimainkan,
-    // hidupkan kembali Birds of a Feather
-    if (adaLaguYangSedangMain) {
-
-        const musikUtama =
-            document.getElementById("birthdayMusic");
-
-        if (musikUtama) {
-
-            musikUtama.play()
-                .catch(() => {});
-
-        }
-
-        musikUtamaHarusKembali = false;
-        laguMyMusicSedangDiputar = false;
+        return;
     }
-}
 
+
+    // =========================================
+    // WINDOW BIASA
+    // =========================================
+
+    windowElement.remove();
+}
 
 function minimizeWindow(id) {
 
@@ -1078,11 +1241,11 @@ function buatHati() {
     heart.classList.add("heart-fall");
 
     const jenisHati = [
-        "💗",
-        "💕",
-        "💖",
-        "💓",
-        "💘"
+        "??",
+        "??",
+        "??",
+        "??",
+        "??"
     ];
 
     heart.innerHTML =
@@ -1113,8 +1276,7 @@ function buatHati() {
 
 setInterval(buatHati, 800);
 
-let musikUtamaHarusKembali = false;
-let laguMyMusicSedangDiputar = false;
+let musikUtamaSedangDipauseOlehOurMusic = false;
 
 
 document.addEventListener("play", function (event) {
@@ -1123,52 +1285,54 @@ document.addEventListener("play", function (event) {
         return;
     }
 
+    const musikUtama =
+        document.getElementById("birthdayMusic");
+
 
     // =========================================
-    // MUSIK UTAMA
+    // MUSIK UTAMA WEBSITE
     // =========================================
 
     if (event.target.id === "birthdayMusic") {
 
-        // Kalau ada lagu Our Music yang sedang dimainkan,
-        // jangan izinkan musik utama ikut bermain.
-        if (laguMyMusicSedangDiputar) {
+        document
+            .querySelectorAll(".music-page audio")
+            .forEach(lagu => {
 
-            event.target.pause();
+                if (!lagu.paused) {
+                    lagu.pause();
+                }
 
-        }
+            });
+
+        musikUtamaSedangDipauseOlehOurMusic = false;
 
         return;
     }
 
 
     // =========================================
-    // LAGU DI Our Music
+    // LAGU DI OUR MUSIC
     // =========================================
 
-    if (
-        event.target.closest(".music-page")
-    ) {
+    if (event.target.closest(".music-page")) {
 
-        const musikUtama =
-            document.getElementById("birthdayMusic");
+        ourMusicSedangTerbuka = true;
+        ourMusicPernahDiputar = true;
+        ourMusicSedangDiputar = true;
 
 
-        // Ingat apakah musik utama sedang bermain
-        if (musikUtama) {
+        // Pause musik utama
+        if (musikUtama && !musikUtama.paused) {
 
-            musikUtamaHarusKembali =
-                !musikUtama.paused;
+            musikUtamaSedangDipauseOlehOurMusic = true;
 
             musikUtama.pause();
 
         }
 
 
-        laguMyMusicSedangDiputar = true;
-
-
-        // Hentikan lagu Our Music lainnya
+        // Hanya satu lagu Our Music yang boleh bermain
         document
             .querySelectorAll(".music-page audio")
             .forEach(lagu => {
@@ -1183,50 +1347,34 @@ document.addEventListener("play", function (event) {
 
 }, true);
 
-
-
 document.addEventListener("pause", function (event) {
 
     if (event.target.tagName !== "AUDIO") {
         return;
     }
 
+
+    // Pause musik utama
     if (event.target.id === "birthdayMusic") {
         return;
     }
 
-    if (
-        event.target.closest(".music-page")
-    ) {
 
-        // Kalau audio masih ada di DOM,
-        // cek apakah ada lagu lain yang masih aktif.
-        const laguAktif =
+    // Pause lagu Our Music
+    if (event.target.closest(".music-page")) {
+
+        const masihAdaLagu =
             Array.from(
                 document.querySelectorAll(".music-page audio")
             ).some(lagu => !lagu.paused);
 
 
-        if (!laguAktif) {
+        ourMusicSedangDiputar = masihAdaLagu;
 
-            laguMyMusicSedangDiputar = false;
-
-
-            if (musikUtamaHarusKembali) {
-
-                const musikUtama =
-                    document.getElementById("birthdayMusic");
-
-                if (musikUtama) {
-
-                    musikUtama.play()
-                        .catch(() => {});
-
-                }
-
-                musikUtamaHarusKembali = false;
-            }
-        }
     }
 
 }, true);
+
+let ourMusicSedangTerbuka = false;
+let ourMusicPernahDiputar = false;
+let ourMusicSedangDiputar = false;
