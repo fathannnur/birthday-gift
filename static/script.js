@@ -366,7 +366,7 @@ function bukaWindow(jenis) {
             <p>
                 - fathan
             </p>
-
+        
         </div>
     `;
 }
