@@ -1,4 +1,4 @@
-function mulai() {
+﻿function mulai() {
 
     document.querySelector(".container").classList.add("mulai-klik");
 
@@ -71,35 +71,37 @@ function bukaHadiah() {
 
             <div class="desktop-icons">
 
-                <div class="desktop-icon" onclick="bukaWindow('recycle')">
-                    <div class="icon-image">🗑️</div>
-                    <div class="icon-name">Recycle Bin</div>
-                </div>
+    <div class="desktop-icon" onclick="bukaWindow('recycle')">
+        <div class="icon-image">🗑️</div>
+        <div class="icon-name">Recycle Bin</div>
+    </div>
 
-                <div class="desktop-icon" onclick="bukaWindow('computer')">
-                    <div class="icon-image">💻</div>
-                    <div class="icon-name">Our Computer</div>
-                </div>
+    <div class="desktop-icon" onclick="bukaWindow('computer')">
+        <div class="icon-image">💻</div>
+        <div class="icon-name">Our Computer</div>
+    </div>
 
-                <div class="desktop-icon" onclick="bukaWindow('word')">
-                    <div class="icon-image">💻</div>
-                    <div class="icon-name">Microsoft Word</div>
-                </div>
+    <div class="desktop-icon" onclick="bukaWindow('word')">
+        <div class="icon-image">📄</div>
+        <div class="icon-name">Microsoft Word</div>
+    </div>
 
-                <div class="desktop-icon" onclick="bukaWindow('pictures')">
-                    <div class="icon-image">🗑️</div>
-                    <div class="icon-name">Our Pictures</div>
-                </div>
+    <div class="desktop-icon" onclick="bukaWindow('pictures')">
+        <div class="icon-image">🖼️</div>
+        <div class="icon-name">Our Pictures</div>
+    </div>
 
-                <div class="desktop-icon" onclick="bukaWindow('videos')">
-                    <div class="icon-image">💻</div>
-                    <div class="icon-name">Our Videos</div>
-                </div>
+    <div class="desktop-icon" onclick="bukaWindow('videos')">
+        <div class="icon-image">🎬</div>
+        <div class="icon-name">Our Videos</div>
+    </div>
 
-                <div class="desktop-icon" onclick="bukaWindow('music')">
-                    <div class="icon-image">💻</div>
-                    <div class="icon-name">Our Music</div>
-                </div>
+    <div class="desktop-icon" onclick="bukaWindow('music')">
+        <div class="icon-image">🎵</div>
+        <div class="icon-name">Our Music</div>
+    </div>
+
+</div>
 
             </div>
 
@@ -196,8 +198,19 @@ function bukaWindow(jenis) {
 
     const windowId = "window-" + jenis;
 
-    // Kalau window sudah ada, jangan buat ulang.
-    // Cukup tampilkan kembali.
+
+    // Sembunyikan semua window lain
+    document.querySelectorAll(".xp-window").forEach(window => {
+
+        if (window.id !== windowId) {
+            window.style.display = "none";
+        }
+
+    });
+
+
+    // Kalau window sudah pernah dibuat,
+    // tampilkan kembali window tersebut
     const windowLama = document.getElementById(windowId);
 
     if (windowLama) {
@@ -207,6 +220,7 @@ function bukaWindow(jenis) {
 
         return;
     }
+
 
     let judul = "";
 
@@ -233,20 +247,16 @@ function bukaWindow(jenis) {
 
                 <div>
                     <h2>Birthday Letter 💗</h2>
-                    <p>Untuk seseorang yang spesial</p>
+                    <p>YTH. Faida Rizqi Raihana</p>
                 </div>
             </div>
 
             <hr>
 
-            <h3>Selamat Ulang Tahun, Feyy! 🎂💗</h3>
+            <h3>Hii selamat ulang taun yaa incess 💛🎂💗</h3>
 
             <p>
-                Hii selamat ulang taun yaa feyy💛
-            </p>
-
-            <p>
-                semoga yang disemogakan tersemogakan hihi.
+                semoga yang disemogakan tersemogakan hihi.<br>
                 sedih banget ehh cuman bisa ngucapin doang terus udah gitu dari jauh lagi,
                 jadinya aku cuman bisa bantu doa aja yak..
             </p>
@@ -290,12 +300,9 @@ function bukaWindow(jenis) {
             </p>
 
             <p>
-                mungkin kayanya aku rasa ini momen yang tepat buat bilang
-            </p>
-
-            <p>
+                mungkin kayanya aku rasa ini momen yang tepat buat bilang..<br>
                 i remember the moment that when i first time noticed you in august 2024,
-                after that i've been waiting for you until now, i don't know why but i liked you,
+                i don't know why but i like you since that and i've been waiting for you until now,
                 yaa walaupun cuman 2 taun doang sih nungguinnya gak yang lama lama bgt wkwk.
             </p>
 
@@ -315,13 +322,13 @@ function bukaWindow(jenis) {
             </p>
 
             <p>
-                btw kamu tau ga, aku suka banget sama suara kamu fey,
+                btw kamu tau ga, aku suka banget loh sama suara kamu fey,
                 gtw lucu aja gitu makanya aku suka denger fey ngomong,
                 apalagi pas dibarengin dengan hal random yang fey lakuin
             </p>
 
             <p>
-                momen terbaik yang aku dapetin sama fey, itu waktu aku motret kamu pake digicam ku,
+                the most beautiful thing ever yang aku dapetin sama fey, itu waktu aku motret kamu pake digicam ku,
                 i mean i love photography and luckily my favorite person become my subject
             </p>
 
@@ -330,10 +337,7 @@ function bukaWindow(jenis) {
             </p>
 
             <p>
-                from the deepest heart
-            </p>
-
-            <p>
+                from the deepest heart<br>
                 read it with your heart too haha&lt;3
             </p>
 
@@ -347,15 +351,12 @@ function bukaWindow(jenis) {
             </p>
 
             <p>
-                take care & see you in januari 2027😉
+                take care and see you in januari 2027😉
             </p>
 
             <p>
-                btw boleh ga sih bilang
-            </p>
-
-            <p>
-                i love you in every universe💛
+            btw boleh ga sih bilang<br>
+            i love you in every universe💛
             </p>
 
             <p>
@@ -902,11 +903,11 @@ if (jenis === "music") {
                 <h2>Recycle Bin</h2>
 
                 <p>
-                    Tidak ada yang perlu dibuang di sini 💗
+                    Gaada yang perlu dibuang di sini 💗
                 </p>
 
                 <p>
-                    Semua kenangan masih disimpan.
+                    Semua kenangan indah menjadi memori baik dan abadi
                 </p>
 
             </div>
@@ -941,9 +942,9 @@ if (jenis === "music") {
                     ?
                 </button>
 
-                <button onclick="tutupWindow('${windowId}')">
-                    �
-                </button>
+               <button onclick="tutupWindow('${windowId}')">
+    ×
+</button>
 
             </div>
 
@@ -990,7 +991,7 @@ function bukaFoto(src, nama) {
                     ${nama}
 
                     <button onclick="tutupFoto()">
-                        �
+                        ×
                     </button>
                 </div>
 
