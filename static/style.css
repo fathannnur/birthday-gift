@@ -1728,3 +1728,26 @@ button:active {
     padding: 0;
     overflow: hidden;
 }
+
+
+/* KHUSUS HP */
+@media (max-width: 700px) {
+
+    .xp-window:has(.video-player-window) {
+        width: 94vw;
+        height: auto;
+        max-height: 70vh;
+    }
+
+    .xp-window:has(.video-player-window) .window-content {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .video-player-window video {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+}

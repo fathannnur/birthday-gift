@@ -474,7 +474,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
                 <video
                     muted
-                    preload="metadata"
+                    preload="none"
                     src="static/videos/Aca.mp4">
                 </video>
 
@@ -488,7 +488,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
     <video
         muted
-        preload="metadata"
+        preload="none"
         src="static/videos/Cantika dan Mala.mp4">
     </video>
 
