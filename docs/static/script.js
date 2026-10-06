@@ -327,7 +327,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
             <p>
                 aku seneng banget waktu pertama kali bisa satu meja sama fey terus
-                sempat beberapa kali berintraksi, ya walaupun abis itu kita gapernah
+                sempat beberapa kali berinteraksi, ya walaupun abis itu kita gapernah
                 ngobrol lagi sampe hampir 1 tahun, terus akhirnya kita berinteraksi lagi bulan juni tadi.
             </p>
 
@@ -479,7 +479,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
                 </video>
 
                 <div class="video-file-name">
-                    Aca.mp4
+                    Aca
                 </div>
 
             </div>
@@ -493,7 +493,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
     </video>
 
     <div class="video-file-name">
-        Cantika dan Mala.mp4
+        Cantika dan Mala
     </div>
 
 </div>
