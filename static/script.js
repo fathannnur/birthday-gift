@@ -479,7 +479,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
                 </video>
 
                 <div class="video-file-name">
-                    Aca.mp4
+                    Aca
                 </div>
 
             </div>
@@ -493,7 +493,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
     </video>
 
     <div class="video-file-name">
-        Cantika dan Mala.mp4
+        Cantika dan Mala
     </div>
 
 </div>
