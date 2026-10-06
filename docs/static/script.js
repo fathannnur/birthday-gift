@@ -1525,17 +1525,25 @@ let ourMusicSedangDiputar = false;
 
 function bukaVideo(namaFile, namaVideo) {
 
+    // Tutup video window lain yang sedang terbuka
+    document.querySelectorAll(".xp-window").forEach(window => {
+
+        const video = window.querySelector(".video-player-window video");
+
+        if (video) {
+
+            video.pause();
+
+            if (video === videoSedangDiputar) {
+                lanjutkanMusikSetelahVideo();
+            }
+
+            window.remove();
+        }
+
+    });
+
     const windowId = "video-" + namaVideo;
-
-    const windowLama = document.getElementById(windowId);
-
-    if (windowLama) {
-        windowLama.style.display = "block";
-        windowLama.style.zIndex = Date.now();
-        return;
-    }
-
-    const windowElement = document.createElement("div");
 
     windowElement.className = "xp-window";
     windowElement.id = windowId;
