@@ -1525,10 +1525,12 @@ let ourMusicSedangDiputar = false;
 
 function bukaVideo(namaFile, namaVideo) {
 
-    // Tutup video window lain yang sedang terbuka
-    document.querySelectorAll(".xp-window").forEach(window => {
+    // Tutup semua video window yang sedang terbuka
+    document.querySelectorAll(".xp-window").forEach(windowElement => {
 
-        const video = window.querySelector(".video-player-window video");
+        const video = windowElement.querySelector(
+            ".video-player-window video"
+        );
 
         if (video) {
 
@@ -1538,18 +1540,37 @@ function bukaVideo(namaFile, namaVideo) {
                 lanjutkanMusikSetelahVideo();
             }
 
-            window.remove();
+            windowElement.remove();
         }
 
     });
 
+
     const windowId = "video-" + namaVideo;
+
+
+    // Kalau window ini masih ada, buka kembali
+    const windowLama = document.getElementById(windowId);
+
+    if (windowLama) {
+
+        windowLama.style.display = "block";
+        windowLama.style.zIndex = Date.now();
+
+        return;
+    }
+
+
+    // Buat window video baru
+    const windowElement = document.createElement("div");
 
     windowElement.className = "xp-window";
     windowElement.id = windowId;
     windowElement.style.zIndex = Date.now();
 
+
     windowElement.innerHTML = `
+
         <div class="window-titlebar">
 
             <div class="window-title">
@@ -1574,18 +1595,24 @@ function bukaVideo(namaFile, namaVideo) {
 
         </div>
 
+
         <div class="window-content video-player-window">
 
             <video controls autoplay>
+
                 <source
                     src="static/videos/${namaFile}"
                     type="video/mp4">
+
             </video>
 
         </div>
+
     `;
 
+
     document.body.appendChild(windowElement);
+
 
     buatWindowBisaDigeser(windowElement);
 }
