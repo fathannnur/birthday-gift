@@ -200,13 +200,28 @@ function bukaWindow(jenis) {
 
 
     // Sembunyikan semua window lain
-    document.querySelectorAll(".xp-window").forEach(window => {
+document.querySelectorAll(".xp-window").forEach(window => {
 
-        if (window.id !== windowId) {
-            window.style.display = "none";
+    if (window.id !== windowId) {
+
+        // Kalau window yang disembunyikan punya video
+        const video = window.querySelector("video");
+
+        if (video && !video.paused) {
+
+            video.pause();
+
+            // Lanjutkan musik yang sebelumnya dipause
+            if (video === videoSedangDiputar) {
+                lanjutkanMusikSetelahVideo();
+            }
+
         }
 
-    });
+        window.style.display = "none";
+    }
+
+});
 
 
     // Kalau window sudah pernah dibuat,
@@ -453,31 +468,35 @@ function bukaWindow(jenis) {
             📁 Our Videos
         </div>
 
-        <div class="video-list">
+        <div class="video-grid">
 
-            <div class="video-placeholder">
-                🎬
-                <div>
-                    <strong>Video 1</strong>
-                    <small>Ucapan dari teman</small>
+            <div class="video-card" onclick="bukaVideo('Aca.mp4', 'Aca')">
+
+                <video
+                    muted
+                    preload="metadata"
+                    src="static/videos/Aca.mp4">
+                </video>
+
+                <div class="video-file-name">
+                    Aca.mp4
                 </div>
+
             </div>
 
-            <div class="video-placeholder">
-                🎬
-                <div>
-                    <strong>Video 2</strong>
-                    <small>Ucapan dari teman</small>
-                </div>
-            </div>
+            <div class="video-card" onclick="bukaVideo('Cantika dan Mala.mp4', 'Cantika dan Mala')">
 
-            <div class="video-placeholder">
-                🎬
-                <div>
-                    <strong>Video 3</strong>
-                    <small>Ucapan dari teman</small>
-                </div>
-            </div>
+    <video
+        muted
+        preload="metadata"
+        src="static/videos/Cantika dan Mala.mp4">
+    </video>
+
+    <div class="video-file-name">
+        Cantika dan Mala.mp4
+    </div>
+
+</div>
 
         </div>
     `;
@@ -1093,6 +1112,31 @@ function tutupWindow(id) {
 
 
     // =========================================
+    // CEK APAKAH INI WINDOW VIDEO
+    // =========================================
+
+    const video =
+        windowElement.querySelector("video");
+
+
+    if (video) {
+
+        // Hentikan video
+        video.pause();
+
+
+        // Kalau video ini yang sedang aktif,
+        // lanjutkan musik yang sebelumnya dipause
+        if (video === videoSedangDiputar) {
+
+            lanjutkanMusikSetelahVideo();
+
+        }
+
+    }
+
+
+    // =========================================
     // WINDOW BIASA
     // =========================================
 
@@ -1103,11 +1147,23 @@ function minimizeWindow(id) {
 
     const windowElement = document.getElementById(id);
 
-    if (windowElement) {
+    if (!windowElement) {
+        return;
+    }
 
-        windowElement.style.display = "none";
+    const video = windowElement.querySelector("video");
+
+    if (video && !video.paused) {
+
+        video.pause();
+
+        if (video === videoSedangDiputar) {
+            lanjutkanMusikSetelahVideo();
+        }
 
     }
+
+    windowElement.style.display = "none";
 }
 
 
@@ -1380,6 +1436,148 @@ document.addEventListener("pause", function (event) {
 
 }, true);
 
+let audioSebelumVideo = null;
+let videoSedangDiputar = null;
+
+function lanjutkanMusikSetelahVideo() {
+
+    if (audioSebelumVideo) {
+
+        audioSebelumVideo.play().catch(error => {
+            console.log("Musik gagal dilanjutkan:", error);
+        });
+
+    }
+
+    audioSebelumVideo = null;
+    videoSedangDiputar = null;
+}
+
+document.addEventListener("play", function (event) {
+
+    if (event.target.tagName !== "VIDEO") {
+        return;
+    }
+
+    const videoBaru = event.target;
+
+    // Kalau ada video lain yang sedang bermain,
+    // pause video tersebut
+    document.querySelectorAll("video").forEach(video => {
+
+        if (video !== videoBaru && !video.paused) {
+            video.pause();
+        }
+
+    });
+
+    // Kalau ini video baru
+    if (videoSedangDiputar !== videoBaru) {
+
+        videoSedangDiputar = videoBaru;
+        audioSebelumVideo = null;
+
+        // Simpan audio yang sedang bermain
+        document.querySelectorAll("audio").forEach(audio => {
+
+            if (!audio.paused) {
+                audioSebelumVideo = audio;
+                audio.pause();
+            }
+
+        });
+
+    }
+
+}, true);
+
+
+document.addEventListener("ended", function (event) {
+
+    if (event.target.tagName !== "VIDEO") {
+        return;
+    }
+
+    // Kalau ini video yang sedang aktif
+    if (videoSedangDiputar === event.target) {
+
+        if (audioSebelumVideo) {
+
+            audioSebelumVideo.play().catch(error => {
+                console.log(
+                    "Musik gagal dilanjutkan:",
+                    error
+                );
+            });
+
+        }
+
+        audioSebelumVideo = null;
+        videoSedangDiputar = null;
+
+    }
+
+}, true);
+
 let ourMusicSedangTerbuka = false;
 let ourMusicPernahDiputar = false;
 let ourMusicSedangDiputar = false;
+
+function bukaVideo(namaFile, namaVideo) {
+
+    const windowId = "video-" + namaVideo;
+
+    const windowLama = document.getElementById(windowId);
+
+    if (windowLama) {
+        windowLama.style.display = "block";
+        windowLama.style.zIndex = Date.now();
+        return;
+    }
+
+    const windowElement = document.createElement("div");
+
+    windowElement.className = "xp-window";
+    windowElement.id = windowId;
+    windowElement.style.zIndex = Date.now();
+
+    windowElement.innerHTML = `
+        <div class="window-titlebar">
+
+            <div class="window-title">
+                🎬 ${namaVideo}.mp4
+            </div>
+
+            <div class="window-buttons">
+
+                <button onclick="minimizeWindow('${windowId}')">
+                    -
+                </button>
+
+                <button onclick="maximizeWindow('${windowId}')">
+                    □
+                </button>
+
+                <button onclick="tutupWindow('${windowId}')">
+                    ×
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="window-content video-player-window">
+
+            <video controls autoplay>
+                <source
+                    src="static/videos/${namaFile}"
+                    type="video/mp4">
+            </video>
+
+        </div>
+    `;
+
+    document.body.appendChild(windowElement);
+
+    buatWindowBisaDigeser(windowElement);
+}
