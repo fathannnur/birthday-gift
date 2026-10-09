@@ -471,33 +471,33 @@ if (jenis === "videos") {
         <div class="video-grid">
 
             <div class="video-card" onclick="bukaVideo('Aca.mp4', 'Aca')">
-                <video muted preload="none" src="static/videos/Aca.mp4"></video>
+                <video muted preload="metadata" src="static/videos/Aca.mp4"></video>
                 <div class="video-file-name">Aca</div>
             </div>
 
             <div class="video-card" onclick="bukaVideo('Cantika dan Mala.mp4', 'Cantika dan Mala')">
-                <video muted preload="none" src="static/videos/Cantika dan Mala.mp4"></video>
+                <video muted preload="metadata" src="static/videos/Cantika dan Mala.mp4"></video>
                 <div class="video-file-name">Cantika dan Mala</div>
             </div>
 
             <div class="video-card" onclick="bukaVideo('Nina.mp4', 'nina')">
-                <video muted preload="none" src="static/videos/Nina.mp4"></video>
+                <video muted preload="metadata" src="static/videos/Nina.mp4"></video>
                 <div class="video-file-name">nina</div>
             </div>
 
             <div class="video-card" onclick="bukaVideo('jija & mey + wenya 🫰🏻.mp4', 'jija & mey + wenya 🫰🏻')">
-                <video muted preload="none" src="static/videos/jija & mey + wenya 🫰🏻.mp4"></video>
+                <video muted preload="metadata" src="static/videos/jija & mey + wenya 🫰🏻.mp4"></video>
                 <div class="video-file-name">jija & mey + wenya 🫰🏻</div>
             </div>
 
             
             <div class="video-card" onclick="bukaVideo('nadsal cuyy.mp4', 'nadsal cuyy')">
-                <video muted preload="none" src="static/videos/nadsal cuyy.mp4"></video>
+                <video muted preload="metadata" src="static/videos/nadsal cuyy.mp4"></video>
                 <div class="video-file-name">nadsal cuyy</div>
             </div>
 
             <div class="video-card" onclick="bukaVideo('taskia.mp4', 'taskia')">
-                <video muted preload="none" src="static/videos/taskia.mp4"></video>
+                <video muted preload="metadata" src="static/videos/taskia.mp4"></video>
                 <div class="video-file-name">taskia</div>
 </          div>
 
