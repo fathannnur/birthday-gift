@@ -458,7 +458,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
 }
 
 
-    if (jenis === "videos") {
+if (jenis === "videos") {
 
     judul = "Our Videos";
     icon = "🎬";
@@ -471,48 +471,24 @@ document.querySelectorAll(".xp-window").forEach(window => {
         <div class="video-grid">
 
             <div class="video-card" onclick="bukaVideo('Aca.mp4', 'Aca')">
-
-                <video
-                    muted
-                    preload="none"
-                    src="static/videos/Aca.mp4">
-                </video>
-
-                <div class="video-file-name">
-                    Aca
-                </div>
-
+                <video muted preload="none" src="static/videos/Aca.mp4"></video>
+                <div class="video-file-name">Aca</div>
             </div>
 
             <div class="video-card" onclick="bukaVideo('Cantika dan Mala.mp4', 'Cantika dan Mala')">
-
-                <video
-                    muted
-                    preload="none"
-                    src="static/videos/Cantika dan Mala.mp4">
-                </video>
-
-                <div class="video-file-name">
-                    Cantika dan Mala
-                </div>
-
+                <video muted preload="none" src="static/videos/Cantika dan Mala.mp4"></video>
+                <div class="video-file-name">Cantika dan Mala</div>
             </div>
 
             <div class="video-card" onclick="bukaVideo('Nina.mp4', 'Nina')">
-
-                <video
-                    muted
-                    preload="none"
-                    src="static/videos/Nina.mp4">
-                </video>
-
-                <div class="video-file-name">
-                    Nina
-                </div>
-
+                <video muted preload="none" src="static/videos/Nina.mp4"></video>
+                <div class="video-file-name">Nina</div>
             </div>
 
-        </div>
+            <div class="video-card" onclick="bukaVideo('jija & mey + wenya 🫰🏻.mp4', 'jija & mey + wenya 🫰🏻')">
+                <video muted preload="none" src="static/videos/jija & mey + wenya 🫰🏻.mp4"></video>
+                <div class="video-file-name">jija & mey + wenya 🫰🏻</div>
+            </div>
 
         </div>
     `;
