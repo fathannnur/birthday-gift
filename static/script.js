@@ -499,7 +499,7 @@ if (jenis === "videos") {
             <div class="video-card" onclick="bukaVideo('taskia.mp4', 'Taskia')">
                 <video muted preload="none" src="static/videos/taskia.mp4"></video>
                 <div class="video-file-name">taskia</div>
-            </div>
+</          div>
 
         </div>
     `;
