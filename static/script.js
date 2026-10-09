@@ -480,7 +480,7 @@ if (jenis === "videos") {
                 <div class="video-file-name">Cantika dan Mala</div>
             </div>
 
-            <div class="video-card" onclick="bukaVideo('Nina.mp4', 'Nina')">
+            <div class="video-card" onclick="bukaVideo('Nina.mp4', 'nina')">
                 <video muted preload="none" src="static/videos/Nina.mp4"></video>
                 <div class="video-file-name">nina</div>
             </div>
@@ -491,12 +491,12 @@ if (jenis === "videos") {
             </div>
 
             
-            <div class="video-card" onclick="bukaVideo('nadsal cuyy.mp4', 'Nadsal Cuyy')">
+            <div class="video-card" onclick="bukaVideo('nadsal cuyy.mp4', 'nadsal cuyy')">
                 <video muted preload="none" src="static/videos/nadsal cuyy.mp4"></video>
                 <div class="video-file-name">nadsal cuyy</div>
             </div>
 
-            <div class="video-card" onclick="bukaVideo('taskia.mp4', 'Taskia')">
+            <div class="video-card" onclick="bukaVideo('taskia.mp4', 'taskia')">
                 <video muted preload="none" src="static/videos/taskia.mp4"></video>
                 <div class="video-file-name">taskia</div>
 </          div>
