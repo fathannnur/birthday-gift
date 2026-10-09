@@ -482,12 +482,23 @@ if (jenis === "videos") {
 
             <div class="video-card" onclick="bukaVideo('Nina.mp4', 'Nina')">
                 <video muted preload="none" src="static/videos/Nina.mp4"></video>
-                <div class="video-file-name">Nina</div>
+                <div class="video-file-name">nina</div>
             </div>
 
             <div class="video-card" onclick="bukaVideo('jija & mey + wenya 🫰🏻.mp4', 'jija & mey + wenya 🫰🏻')">
                 <video muted preload="none" src="static/videos/jija & mey + wenya 🫰🏻.mp4"></video>
                 <div class="video-file-name">jija & mey + wenya 🫰🏻</div>
+            </div>
+
+            
+            <div class="video-card" onclick="bukaVideo('nadsal cuyy.mp4', 'Nadsal Cuyy')">
+                <video muted preload="none" src="static/videos/nadsal cuyy.mp4"></video>
+                <div class="video-file-name">nadsal cuyy</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('taskia.mp4', 'Taskia')">
+                <video muted preload="none" src="static/videos/taskia.mp4"></video>
+                <div class="video-file-name">taskia</div>
             </div>
 
         </div>
