@@ -1577,7 +1577,7 @@ function bukaVideo(namaFile, namaVideo) {
         <div class="window-titlebar">
 
             <div class="window-title">
-                🎬 ${namaVideo}.mp4
+                🎬 ${namaVideo}
             </div>
 
             <div class="window-buttons">
