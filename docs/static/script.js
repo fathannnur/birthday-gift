@@ -486,17 +486,33 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
             <div class="video-card" onclick="bukaVideo('Cantika dan Mala.mp4', 'Cantika dan Mala')">
 
-    <video
-        muted
-        preload="none"
-        src="static/videos/Cantika dan Mala.mp4">
-    </video>
+                <video
+                    muted
+                    preload="none"
+                    src="static/videos/Cantika dan Mala.mp4">
+                </video>
 
-    <div class="video-file-name">
-        Cantika dan Mala
-    </div>
+                <div class="video-file-name">
+                    Cantika dan Mala
+                </div>
 
-</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('Nina.mp4', 'Nina')">
+
+                <video
+                    muted
+                    preload="none"
+                    src="static/videos/Nina.mp4">
+                </video>
+
+                <div class="video-file-name">
+                    Nina
+                </div>
+
+            </div>
+
+        </div>
 
         </div>
     `;
