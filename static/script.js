@@ -322,7 +322,11 @@ document.querySelectorAll(".xp-window").forEach(window => {
                 mungkin kayanya aku rasa ini momen yang tepat buat bilang..<br>
                 i remember the moment that when i first time noticed you in august 2024,
                 i don't know why but i like you since that and i've been waiting for you until now,
-                yaa walaupun cuman 2 taun doang sih nungguinnya gak yang lama lama bgt wkwk.
+                yaa walaupun cuman 2 taun doang sih nungguinnya gak yang lama lama bgt wkwk,
+                tapi aku rasa aku udah berhasil ngelewatin fase menunggu itu, 
+                karena gaada yang perlu ditungguin lagi, kata "menunggu" itu udah berubah menjadi
+                "berhasil memilikinya". bertahan dengan waktu selama 2 tahun itu sekarang memiliki arti
+                yang lebih besar dari sekedar menunggu, karena sekarang aku bisa bilang kalo aku udah berhasil.
             </p>
 
             <p>
