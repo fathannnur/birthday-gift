@@ -506,6 +506,10 @@ if (jenis === "videos") {
                 <div class="video-file-name">tasya</div>
             </div>
 
+            <div class="video-card" onclick="bukaVideo('ini dani.mp4', 'Ini Dani')">
+                <video muted preload="none" src="static/videos/ini dani.mp4"></video>
+                <div class="video-file-name">Ini Dani</div>
+            </div>
 
         </div>
     `;
