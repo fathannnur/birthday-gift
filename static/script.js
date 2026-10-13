@@ -571,7 +571,7 @@ if (jenis === "music") {
 
                 <div class="featured-info">
 
-                    <h2>Birds of a Feather</h2>
+                    <h2>BIRDS OF A FEATHER</h2>
 
                     <p class="artist">
                         Billie Eilish
@@ -717,7 +717,7 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>A Thousand Years</strong>
+                        <strong>a thousand years</strong>
 
                         <span>Christina Perri</span>
 
