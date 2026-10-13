@@ -322,7 +322,11 @@ document.querySelectorAll(".xp-window").forEach(window => {
                 mungkin kayanya aku rasa ini momen yang tepat buat bilang..<br>
                 i remember the moment that when i first time noticed you in august 2024,
                 i don't know why but i like you since that and i've been waiting for you until now,
-                yaa walaupun cuman 2 taun doang sih nungguinnya gak yang lama lama bgt wkwk.
+                yaa walaupun cuman 2 taun doang sih nungguinnya gak yang lama lama bgt wkwk,
+                tapi aku rasa aku udah berhasil ngelewatin fase menunggu itu, 
+                karena gaada yang perlu ditungguin lagi, kata "menunggu" itu udah berubah menjadi
+                "berhasil memilikinya". bertahan dengan waktu selama 2 tahun itu sekarang memiliki arti
+                yang lebih besar dari sekedar menunggu, karena sekarang aku bisa bilang kalo aku udah berhasil.
             </p>
 
             <p>
@@ -480,7 +484,7 @@ if (jenis === "videos") {
                 <div class="video-file-name">Cantika dan Mala</div>
             </div>
 
-            <div class="video-card" onclick="bukaVideo('Nina.mp4', 'Nina')">
+            <div class="video-card" onclick="bukaVideo('Nina.mp4', 'nina')">
                 <video muted preload="none" src="static/videos/Nina.mp4"></video>
                 <div class="video-file-name">nina</div>
             </div>
@@ -489,16 +493,50 @@ if (jenis === "videos") {
                 <video muted preload="none" src="static/videos/jija & mey + wenya 🫰🏻.mp4"></video>
                 <div class="video-file-name">jija & mey + wenya 🫰🏻</div>
             </div>
-
             
-            <div class="video-card" onclick="bukaVideo('nadsal cuyy.mp4', 'Nadsal Cuyy')">
+            <div class="video-card" onclick="bukaVideo('nadsal cuyy.mp4', 'nadsal cuyy')">
                 <video muted preload="none" src="static/videos/nadsal cuyy.mp4"></video>
                 <div class="video-file-name">nadsal cuyy</div>
             </div>
 
-            <div class="video-card" onclick="bukaVideo('taskia.mp4', 'Taskia')">
+            <div class="video-card" onclick="bukaVideo('taskia.mp4', 'taskia')">
                 <video muted preload="none" src="static/videos/taskia.mp4"></video>
                 <div class="video-file-name">taskia</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('tasya.mp4', 'tasya')">
+                <video muted preload="none" src="static/videos/tasya.mp4"></video>
+                <div class="video-file-name">tasya</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('ini dani.mp4', 'ini dani')">
+                <video muted preload="none" src="static/videos/ini dani.mp4"></video>
+                <div class="video-file-name">ini dani</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('puput.mp4', 'puput')">
+                <video muted preload="none" src="static/videos/puput.mp4"></video>
+                <div class="video-file-name">puput</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('nida.mp4', 'nida')">
+                <video muted preload="none" src="static/videos/nida.mp4"></video>
+                <div class="video-file-name">nida</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('kuromi.mp4', 'kuromi')">
+                <video muted preload="none" src="static/videos/kuromi.mp4"></video>
+                <div class="video-file-name">kuromi</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('raida.mp4', 'raida')">
+                <video muted preload="none" src="static/videos/raida.mp4"></video>
+                <div class="video-file-name">raida</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('repinloopin.mp4', 'repinloopin')">
+                <video muted preload="none" src="static/videos/repinloopin.mp4"></video>
+                <div class="video-file-name">repinloopin</div>
             </div>
 
         </div>
@@ -1577,7 +1615,7 @@ function bukaVideo(namaFile, namaVideo) {
         <div class="window-titlebar">
 
             <div class="window-title">
-                🎬 ${namaVideo}.mp4
+                🎬 ${namaVideo}
             </div>
 
             <div class="window-buttons">
