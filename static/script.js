@@ -609,7 +609,8 @@ if (jenis === "music") {
                     </p>
 
                     <p class="music-message">
-                        Somehow, you always feel like home 💗
+                        Somehow, you always feel like home 💗 <br>
+                        Aku naroh kamu di lagu
                     </p>
 
                     <audio controls>
