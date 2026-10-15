@@ -539,6 +539,11 @@ if (jenis === "videos") {
                 <div class="video-file-name">repinloopin</div>
             </div>
 
+            <div class="video-card" onclick="bukaVideo('naya imut cantik.mp4', 'Naya Imut Cantik')">
+                <video muted preload="none" src="static/videos/naya imut cantik.mp4"></video>
+                <div class="video-file-name">Naya Imut Cantik</div>
+            </div>
+
         </div>
     `;
 }
