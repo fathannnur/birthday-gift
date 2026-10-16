@@ -477,11 +477,10 @@ if (jenis === "videos") {
         <div class="birthday-gift-video">
             <div class="birthday-gift-player">
                 <iframe
-                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM"
+                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM?enablejsapi=1&origin=http://127.0.0.1:5000"
                     title="birthday gift"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen>
                 </iframe>
             </div>
@@ -1060,17 +1059,20 @@ if (jenis === "music") {
     `;
 
 
-    area.appendChild(windowElement);
+   
+area.appendChild(windowElement);
 
-    windowElement.addEventListener("mousedown", () => {
+windowElement.addEventListener("mousedown", () => {
+    windowElement.style.zIndex = Date.now();
+});
 
-        windowElement.style.zIndex = Date.now();
+buatWindowBisaDigeser(windowElement);
 
-    });
-
-
-    buatWindowBisaDigeser(windowElement);
+if (jenis === "videos") {
+    aktifkanKontrolVideoSpesial();
 }
+}
+
 
 function bukaFoto(src, nama) {
 
@@ -1120,66 +1122,32 @@ function tutupFoto() {
 }
 
 function tutupWindow(id) {
-
-    const windowElement =
-        document.getElementById(id);
+    const windowElement = document.getElementById(id);
 
     if (!windowElement) {
         return;
     }
 
-
-    // =========================================
-    // CEK APAKAH INI OUR MUSIC
-    // =========================================
-
-    const iniOurMusic =
-        windowElement.querySelector(".music-page");
-
+    // CEK APAKAH INI WINDOW OUR MUSIC
+    const iniOurMusic = windowElement.querySelector(".music-page");
 
     if (iniOurMusic) {
+        const laguOurMusic = windowElement.querySelectorAll(".music-page audio");
 
-        const laguOurMusic =
-            windowElement.querySelectorAll(".music-page audio");
+        const laguSedangDiputar = Array.from(laguOurMusic)
+            .some(lagu => !lagu.paused);
 
+        laguOurMusic.forEach(lagu => lagu.pause());
 
-        // Simpan status SEBELUM lagu dihentikan
-        const laguSedangDiputar =
-            Array.from(laguOurMusic)
-                .some(lagu => !lagu.paused);
-
-
-        // Matikan semua lagu Our Music
-        laguOurMusic.forEach(lagu => {
-            lagu.pause();
-        });
-
-
-        // Hapus window
         windowElement.remove();
 
-
-        // =========================================
-        // HANYA NYALAKAN MUSIK UTAMA
-        // JIKA LAGU OUR MUSIC MEMANG SEDANG MAIN
-        // SAAT TOMBOL X DITEKAN
-        // =========================================
-
         if (laguSedangDiputar) {
-
-            const musikUtama =
-                document.getElementById("birthdayMusic");
-
+            const musikUtama = document.getElementById("birthdayMusic");
 
             if (musikUtama) {
-
-                musikUtama.play()
-                    .catch(() => {});
-
+                musikUtama.play().catch(() => {});
             }
-
         }
-
 
         ourMusicSedangTerbuka = false;
         ourMusicPernahDiputar = false;
@@ -1189,36 +1157,24 @@ function tutupWindow(id) {
         return;
     }
 
-
-    // =========================================
-    // CEK APAKAH INI WINDOW VIDEO
-    // =========================================
-
-    const video =
-        windowElement.querySelector("video");
-
+ 
+    // CEK VIDEO LOKAL — LOGIKA TETAP SEPERTI SEMULA
+    const video = windowElement.querySelector("video");
 
     if (video) {
-
-        // Hentikan video
         video.pause();
 
-
-        // Kalau video ini yang sedang aktif,
-        // lanjutkan musik yang sebelumnya dipause
         if (video === videoSedangDiputar) {
-
             lanjutkanMusikSetelahVideo();
-
         }
-
     }
 
+    // CEK WINDOW OUR VIDEOS KHUSUS YOUTUBE
+    if (windowElement.querySelector(".birthday-gift-player iframe")) {
+        lanjutkanMusikSetelahYouTubeDitutup();
+    }
 
-    // =========================================
-    // WINDOW BIASA
-    // =========================================
-
+    // TUTUP WINDOW
     windowElement.remove();
 }
 
@@ -1518,6 +1474,88 @@ document.addEventListener("pause", function (event) {
 let audioSebelumVideo = null;
 let videoSedangDiputar = null;
 
+let musikSebelumVideo = [];
+let statusMusikYouTubeTersimpan = false;
+
+
+function hentikanSemuaMusikUntukVideo() {
+    const semuaMusik = [
+        document.getElementById("birthdayMusic"),
+        ...document.querySelectorAll(".music-page audio")
+    ].filter(Boolean);
+
+    // Simpan kondisi musik hanya saat pertama kali YouTube diputar
+    if (!statusMusikYouTubeTersimpan) {
+        musikSebelumVideo = semuaMusik.filter(lagu => !lagu.paused);
+        statusMusikYouTubeTersimpan = true;
+    }
+
+    // Hentikan semua musik
+    semuaMusik.forEach(lagu => lagu.pause());
+
+    ourMusicSedangDiputar = false;
+    musikUtamaSedangDipauseOlehOurMusic = false;
+}
+
+function lanjutkanMusikSetelahYouTubeDitutup() {
+    if (!statusMusikYouTubeTersimpan) {
+        return;
+    }
+
+    musikSebelumVideo.forEach(lagu => {
+        if (document.contains(lagu)) {
+            lagu.play().catch(() => {});
+        }
+    });
+
+    musikSebelumVideo = [];
+    statusMusikYouTubeTersimpan = false;
+}
+
+let birthdayGiftYTPlayer = null;
+let birthdayGiftYTApiRequested = false;
+
+function aktifkanKontrolVideoSpesial() {
+    const iframe = document.querySelector(".birthday-gift-player iframe");
+
+    if (!iframe || iframe.dataset.kontrolAktif === "true") return;
+
+    if (!window.YT || !window.YT.Player) {
+        if (!birthdayGiftYTApiRequested) {
+            birthdayGiftYTApiRequested = true;
+
+            const callbackSebelumnya = window.onYouTubeIframeAPIReady;
+
+            window.onYouTubeIframeAPIReady = function () {
+                if (typeof callbackSebelumnya === "function") {
+                    callbackSebelumnya();
+                }
+
+                aktifkanKontrolVideoSpesial();
+            };
+
+            const scriptAPI = document.createElement("script");
+            scriptAPI.src = "https://www.youtube.com/iframe_api";
+            document.head.appendChild(scriptAPI);
+        }
+
+        return;
+    }
+
+    iframe.dataset.kontrolAktif = "true";
+
+    birthdayGiftYTPlayer = new YT.Player(iframe, {
+        events: {
+            onStateChange: function (event) {
+                if (event.data === YT.PlayerState.PLAYING) {
+                    hentikanSemuaMusikUntukVideo();
+                }
+            }
+        }
+    });
+}
+
+
 function lanjutkanMusikSetelahVideo() {
 
     if (audioSebelumVideo) {
@@ -1539,6 +1577,15 @@ document.addEventListener("play", function (event) {
     }
 
     const videoBaru = event.target;
+
+    // Hentikan video spesial YouTube jika video lokal mulai diputar
+if (birthdayGiftYTPlayer) {
+    try {
+        birthdayGiftYTPlayer.pauseVideo();
+    } catch (error) {
+        console.log("YouTube belum siap dihentikan.");
+    }
+}
 
     // Kalau ada video lain yang sedang bermain,
     // pause video tersebut
