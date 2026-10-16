@@ -545,6 +545,11 @@ if (jenis === "videos") {
                 <div class="video-file-name">naya imut cantik</div>
             </div>
 
+            <div class="video-card" onclick="bukaVideo('nadiraawr.mp4', 'nadiraawr')">
+                <video muted preload="none" src="static/videos/nadiraawr.mp4"></video>
+                <div class="video-file-name">nadiraawr</div>
+            </div>
+
         </div>
     `;
 }
