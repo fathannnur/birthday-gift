@@ -477,7 +477,7 @@ if (jenis === "videos") {
         <div class="birthday-gift-video">
             <div class="birthday-gift-player">
                 <iframe
-                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM?enablejsapi=1&origin=http://127.0.0.1:5000"
+                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM?enablejsapi=1&origin=https://fathannnur.github.io"
                     title="birthday gift"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
