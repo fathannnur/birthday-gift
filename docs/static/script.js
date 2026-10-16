@@ -268,16 +268,16 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
             <hr>
 
-            <h3>Hii selamat ulang taun yaa incess 💛🎂💗</h3>
+            <h3>hai selamat ulang taun yaa incess 💛🎂💗</h3>
 
             <p>
-                semoga yang disemogakan tersemogakan hihi.<br>
+                semoga yang disemogakan tersemogakan hehe.<br>
                 sedih banget ehh cuman bisa ngucapin doang, udah gitu dari jauh lagi,
                 jadinya aku cuman bisa bantu doa aja yak..
             </p>
 
             <p>
-                doanya gabisa ku ketik di sini kayanya terlalu panjang,
+                doanya kayanya terlalu panjang,
                 cukup aku aja yang tau doanya gimana, jadi fey cukup aminin aja yaa.
             </p>
 
@@ -308,8 +308,8 @@ document.querySelectorAll(".xp-window").forEach(window => {
             </p>
 
             <p>
-                semoga cepat lulus kuliahnya, terus jadi bu dokter psi,
-                your future psi 🙏🏻
+                semoga cepat lulus kuliahnya, terus jadi ibu dokter psi,
+                my future psi 🙏🏻
             </p>
 
             <p>
@@ -320,13 +320,13 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
             <p>
                 mungkin kayanya aku rasa ini momen yang tepat buat bilang..<br>
-                i remember the moment that when i first time noticed you in august 2024,
+                i remember the moment when i first time noticed you in august 2024,
                 i don't know why but i like you since that and i've been waiting for you until now,
                 yaa walaupun cuman 2 taun doang sih nungguinnya gak yang lama lama bgt wkwk,
                 tapi aku rasa aku udah berhasil ngelewatin fase menunggu itu, 
                 karena gaada yang perlu ditungguin lagi, kata "menunggu" itu udah berubah menjadi
-                "berhasil memilikinya". bertahan dengan waktu selama 2 tahun itu sekarang memiliki arti
-                yang lebih besar dari sekedar menunggu, karena sekarang aku bisa bilang kalo aku udah berhasil.
+                "berhasil". bertahan dengan waktu selama 2 tahun itu sekarang memiliki arti
+                yang lebih besar dari sekedar menunggu, karena sekarang aku bisa bilang kalo aku udah berhasil. xD
             </p>
 
             <p>
@@ -356,6 +356,7 @@ document.querySelectorAll(".xp-window").forEach(window => {
             </p>
 
             <p>
+                berkali kali terlintas dipikiran ku<br>
                 "the person I love has become the subject of the hobby I love."
             </p>
 
@@ -366,9 +367,9 @@ document.querySelectorAll(".xp-window").forEach(window => {
 
             <p>
                 thankss for every pretty good memories, lessons, maupun hal kecil lainnya,
-                aku gabisa sebut semua momen indah yang ku dapet selama sama fey,
+                aku gabisa sebut semua momen indah yang ku dapetin selama bersama fey,
                 tapi setiap tiba tiba keinget aku selalu senyum kok hehe cause it means a lot for me,
-                makasii udh nerima aku, ngajak aku ngobrol, sampe kita sedeket ini,
+                makasii udh nerima aku, ngajak aku ngobrol, sampe kita bisa sedeket ini,
                 seneng banget ehh rasanya bisa ngobrol dan berbagi waktu sama kamu feyy,
                 anyway don't be a strangers yap😃
             </p>
@@ -539,6 +540,26 @@ if (jenis === "videos") {
                 <div class="video-file-name">repinloopin</div>
             </div>
 
+            <div class="video-card" onclick="bukaVideo('naya imut cantik.mp4', 'naya imut cantik')">
+                <video muted preload="none" src="static/videos/naya imut cantik.mp4"></video>
+                <div class="video-file-name">naya imut cantik</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('nadiraawr.mp4', 'nadiraawr')">
+                <video muted preload="none" src="static/videos/nadiraawr.mp4"></video>
+                <div class="video-file-name">nadiraawr</div>
+            </div>
+            
+            <div class="video-card" onclick="bukaVideo('cipa.mp4', 'cipa')">
+                <video muted preload="none" src="static/videos/cipa.mp4"></video>
+                <div class="video-file-name">cipa</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('yasser.mp4', 'yasser')">
+                <video muted preload="none" src="static/videos/yasser.mp4"></video>
+                <div class="video-file-name">yasser</div>
+            </div>
+
         </div>
     `;
 }
@@ -571,7 +592,7 @@ if (jenis === "music") {
 
                 <div class="featured-info">
 
-                    <h2>Birds of a Feather</h2>
+                    <h2>BIRDS OF A FEATHER</h2>
 
                     <p class="artist">
                         Billie Eilish
@@ -609,7 +630,8 @@ if (jenis === "music") {
                     </p>
 
                     <p class="music-message">
-                        Somehow, you always feel like home 💗
+                        Somehow, you always feel like home 💗 <br>
+                        Aku naroh kamu di lagu ini
                     </p>
 
                     <audio controls>
@@ -716,7 +738,7 @@ if (jenis === "music") {
 
                     <div class="playlist-info">
 
-                        <strong>A Thousand Years</strong>
+                        <strong>a thousand years</strong>
 
                         <span>Christina Perri</span>
 

@@ -549,6 +549,16 @@ if (jenis === "videos") {
                 <video muted preload="none" src="static/videos/nadiraawr.mp4"></video>
                 <div class="video-file-name">nadiraawr</div>
             </div>
+            
+            <div class="video-card" onclick="bukaVideo('cipa.mp4', 'cipa')">
+                <video muted preload="none" src="static/videos/cipa.mp4"></video>
+                <div class="video-file-name">cipa</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('yasser.mp4', 'yasser')">
+                <video muted preload="none" src="static/videos/yasser.mp4"></video>
+                <div class="video-file-name">yasser</div>
+            </div>
 
         </div>
     `;
