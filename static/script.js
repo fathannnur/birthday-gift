@@ -477,7 +477,7 @@ if (jenis === "videos") {
         <div class="birthday-gift-video">
             <div class="birthday-gift-player">
                 <iframe
-                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM?enablejsapi=1&origin=http://127.0.0.1:5000"
+                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM?enablejsapi=1"
                     title="birthday gift"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1479,18 +1479,15 @@ let statusMusikYouTubeTersimpan = false;
 
 
 function hentikanSemuaMusikUntukVideo() {
-    const semuaMusik = [
-        document.getElementById("birthdayMusic"),
-        ...document.querySelectorAll(".music-page audio")
-    ].filter(Boolean);
+    const semuaMusik = [...document.querySelectorAll("audio")];
 
-    // Simpan kondisi musik hanya saat pertama kali YouTube diputar
+    // Simpan musik yang memang sedang diputar sebelum YouTube mulai.
     if (!statusMusikYouTubeTersimpan) {
         musikSebelumVideo = semuaMusik.filter(lagu => !lagu.paused);
         statusMusikYouTubeTersimpan = true;
     }
 
-    // Hentikan semua musik
+    // Hentikan seluruh audio agar tidak bertabrakan dengan YouTube.
     semuaMusik.forEach(lagu => lagu.pause());
 
     ourMusicSedangDiputar = false;
@@ -1502,16 +1499,19 @@ function lanjutkanMusikSetelahYouTubeDitutup() {
         return;
     }
 
-    musikSebelumVideo.forEach(lagu => {
-        if (document.contains(lagu)) {
-            lagu.play().catch(() => {});
-        }
-    });
+    const musikUntukDilanjutkan = [...musikSebelumVideo];
 
     musikSebelumVideo = [];
     statusMusikYouTubeTersimpan = false;
-}
 
+    musikUntukDilanjutkan.forEach(lagu => {
+        if (document.contains(lagu)) {
+            lagu.play().catch(error => {
+                console.log("Musik gagal dilanjutkan:", error);
+            });
+        }
+    });
+}
 let birthdayGiftYTPlayer = null;
 let birthdayGiftYTApiRequested = false;
 
@@ -1546,15 +1546,18 @@ function aktifkanKontrolVideoSpesial() {
 
     birthdayGiftYTPlayer = new YT.Player(iframe, {
         events: {
-            onStateChange: function (event) {
-                if (event.data === YT.PlayerState.PLAYING) {
-                    hentikanSemuaMusikUntukVideo();
-                }
-            }
+            onReady: function (event) {
+                birthdayGiftYTPlayer = event.target;
+            },
+
+                onStateChange: function (event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+            hentikanSemuaMusikUntukVideo();
+        }
+    }
         }
     });
 }
-
 
 function lanjutkanMusikSetelahVideo() {
 
