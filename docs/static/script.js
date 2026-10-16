@@ -473,6 +473,22 @@ if (jenis === "videos") {
             📁 Our Videos
         </div>
 
+        
+        <div class="birthday-gift-video">
+            <div class="birthday-gift-player">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM"
+                    title="birthday gift"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-file-name birthday-gift-title">birthday gift</div>
+        </div>
+
+
         <div class="video-grid">
 
             <div class="video-card" onclick="bukaVideo('Aca.mp4', 'Aca')">
@@ -549,7 +565,7 @@ if (jenis === "videos") {
                 <video muted preload="none" src="static/videos/nadiraawr.mp4"></video>
                 <div class="video-file-name">nadiraawr</div>
             </div>
-            
+
             <div class="video-card" onclick="bukaVideo('cipa.mp4', 'cipa')">
                 <video muted preload="none" src="static/videos/cipa.mp4"></video>
                 <div class="video-file-name">cipa</div>

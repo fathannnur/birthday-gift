@@ -1751,3 +1751,34 @@ button:active {
     }
 
 }
+
+
+/* Video spesial birthday gift */
+.birthday-gift-video {
+    width: 100%;
+    margin: 0 auto 24px;
+}
+
+.birthday-gift-player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #000;
+}
+
+.birthday-gift-player iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.birthday-gift-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
