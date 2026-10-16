@@ -1753,9 +1753,12 @@ button:active {
 }
 
 
+
+
 /* Video spesial birthday gift */
 .birthday-gift-video {
-    width: 100%;
+    width: 85%;
+    max-width: 600px;
     margin: 0 auto 24px;
 }
 
@@ -1781,4 +1784,11 @@ button:active {
     margin-top: 10px;
     font-size: 18px;
     font-weight: 600;
+}
+
+/* Supaya tetap nyaman di HP */
+@media (max-width: 600px) {
+    .birthday-gift-video {
+        width: 94%;
+    }
 }
