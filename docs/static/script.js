@@ -477,7 +477,7 @@ if (jenis === "videos") {
         <div class="birthday-gift-video">
             <div class="birthday-gift-player">
                 <iframe
-                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM?enablejsapi=1&origin=https://fathannnur.github.io"
+                    src="https://www.youtube-nocookie.com/embed/ioev0U0aEzM?enablejsapi=1"
                     title="birthday gift"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -573,6 +573,11 @@ if (jenis === "videos") {
             <div class="video-card" onclick="bukaVideo('yasser.mp4', 'yasser')">
                 <video muted preload="none" src="static/videos/yasser.mp4"></video>
                 <div class="video-file-name">yasser</div>
+            </div>
+
+            <div class="video-card" onclick="bukaVideo('rn.mp4', 'rn')">
+                <video muted preload="none" src="static/videos/rn.mp4"></video>
+                <div class="video-file-name">rn</div>
             </div>
 
         </div>
@@ -1550,11 +1555,11 @@ function aktifkanKontrolVideoSpesial() {
                 birthdayGiftYTPlayer = event.target;
             },
 
-            onStateChange: function (event) {
-                if (event.data === YT.PlayerState.PLAYING) {
-                    hentikanSemuaMusikUntukVideo();
-                }
-            }
+                onStateChange: function (event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+            hentikanSemuaMusikUntukVideo();
+        }
+    }
         }
     });
 }

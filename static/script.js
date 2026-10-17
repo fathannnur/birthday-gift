@@ -575,6 +575,11 @@ if (jenis === "videos") {
                 <div class="video-file-name">yasser</div>
             </div>
 
+            <div class="video-card" onclick="bukaVideo('rn.mp4', 'rn')">
+                <video muted preload="none" src="static/videos/rn.mp4"></video>
+                <div class="video-file-name">rn</div>
+            </div>
+
         </div>
     `;
 }
